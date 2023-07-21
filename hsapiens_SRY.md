@@ -46,6 +46,23 @@ TGGACAAAGCTGTAG
 
 <img width="1119" alt="Screenshot 2023-07-21 082626" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/73cd970e-3272-49e1-be29-27217cf8b8cf">
 
+8. The top match gives us the following primers and probes:
+F - GCGACCCATGAACGCATT
+R - GCCATCTTGCGCCTCTGA
+P - CGTGTGGTCTCGCG
+
+9. We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. In this case, we are analyzing exon 1 of SRY so it does not matter. However, if your target region is non-coding, this option may be a valuable crosscheck. Submit the results and check the results below:
+![www ncbi nlm nih gov_tools_primer-blast_index cgi (2)](https://github.com/p4rkerw/dpcr_design/assets/53058914/d176bb5b-293f-4211-b0e2-c7d9ccfbbf43)
+
+10. Here are the primer blast results. Note how there are products that are not on the SRY template. Therefore, this primer pair is probably not the best option.
+
+<img width="1119" alt="Screenshot 2023-07-21 082626" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/d2ff4f1d-b269-4b41-821d-525aca4f72eb">
+
+11. We will now return to the ucsc table browser and retrieve the SRY promoter sequence, which we will define as 1000bp upstream of the TSS. We use the same steps as before, but we will change the options in the below screen:
+
+![www genome ucsc edu_cgi-bin_hgTables_hgsid=1656129220_mmuagBtfZaVawxvVjskqF35lsciB hgta_geneSeqType=genomic hgta_doGenePredSequence=submit (1)](https://github.com/p4rkerw/dpcr_design/assets/53058914/41dea727-def1-4ad4-ad38-e5c23ba0f53c)
+
+
 
 
 
