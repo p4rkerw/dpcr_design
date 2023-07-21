@@ -2,7 +2,6 @@ This workflow describes how to create custom digital PCR primers targeting human
 
 1. First examine SRY using the ucsc genome browser [link](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chrY%3A2786855%2D2787682&hgsid=1662373152_1DFFw2TBAhlHZq7mcWedJA5uZpN8) Note how SRY has a single exon and that there are no common variants in the dbSNP tracks. SNVs can affect probe binding and should be avoided if possible. There are also no repetitive elements in the repeat masker track. It is difficult to design probes that involve repetitive elements because there is a risk they will bind multiple regions in the genome with the same element.
 
-
 ![genome ucsc edu_cgi-bin_hgTracks_db=hg38 lastVirtModeType=default lastVirtModeExtraState= virtModeType=default virtMode=0 nonVirtPosition= position=chrY%3A2786855%2D2787682 hgsid=1662373152_1DFFw2TBAhlHZq7mcWedJA5u](https://github.com/p4rkerw/dpcr_design/assets/53058914/8ca6ace4-736d-406e-a56d-4d11af8a597d)
 
 2. We will now extract the nucleotide sequence of SRY using the ucsc table browser [link](https://genome.ucsc.edu/cgi-bin/hgTables?hgsid=1662123772_FpXeaHHsKgAAMUB54s7ucnMIsOVX&hgta_nextIntersectGroup=varRep&hgta_nextIntersectTrack=dbSnp155Composite&hgta_nextIntersectTable=dbSnp155Common&hgta_nextIntersectOp=none&hgta_nextMoreThreshold=100&hgta_nextLessThreshold=80&boolshad.hgta_nextInvertTable=0&boolshad.hgta_nextInvertTable2=0&hgta_doIntersectSubmit=submit). Here you can see that we have entered the genomic coordinates for SRY.
@@ -19,7 +18,10 @@ This workflow describes how to create custom digital PCR primers targeting human
 ![genome ucsc edu_cgi-bin_hgTables_hgsid=1662376742_cPo2aKJyODUdf7GS7DVtMeya2tSI hgta_geneSeqType=genomic hgta_doGenePredSequence=submit](https://github.com/p4rkerw/dpcr_design/assets/53058914/01163689-5451-45f5-aa6e-5ad41e98dfb1)
 
 
-5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY.
+5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY. Note that the strand is indicated as "-", which in this case is the sense strand. By convention, you would typically take the antisense template on the "+" strand to design primers because that's what's works for RNA-based assays. For DNA-based assays, it doesn't really matter. 
+
+![image](https://github.com/p4rkerw/dpcr_design/assets/53058914/05ac272c-92b5-42dd-9b2f-214f78a959b0)
+
 ```
 >hg38_knownGene_ENST00000383070.2_1 range=chrY:2786989-2787603 5'pad=0 3'pad=0 strand=- repeatMasking=N
 ATGCAATCATATGCTTCTGCTATGTTAAGCGTATTCAACAGCGATGATTA
