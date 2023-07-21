@@ -1,59 +1,149 @@
 This workflow describes how to create custom digital PCR primers targeting human GAPDH
 
-1. First examine GAPDH using the ucsc genome browser [link]([https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chrY%3A2786855%2D2787682&hgsid=1662373152_1DFFw2TBAhlHZq7mcWedJA5uZpN8](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr12%3A6534517%2D6538371&hgsid=1656497518_Oi4KCCWcBnE3r8kqOCovV8yU3WR2)
-2. Note how GAPDH has a number common variants in the dbSNP tracks. SNVs can affect probe binding and should be avoided if possible. Fortunately, there are no repetitive elements in the repeat masker track. It is difficult to design probes that involve repetitive elements because there is a risk they will bind multiple regions in the genome with the same element.
+1. First examine GAPDH using the ucsc genome browser [link](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr12%3A6534517%2D6538371&hgsid=1656497518_Oi4KCCWcBnE3r8kqOCovV8yU3WR2) Note how GAPDH has a number common variants in the dbSNP tracks. SNVs can affect probe binding and should be avoided if possible. Fortunately, there are no repetitive elements in the repeat masker track. It is difficult to design probes that involve repetitive elements because there is a risk they will bind multiple regions in the genome with the same element.
+
+![genome ucsc edu_cgi-bin_hgTracks_db=hg38 lastVirtModeType=default lastVirtModeExtraState= virtModeType=default virtMode=0 nonVirtPosition= position=chr12%3A6534517%2D6538371 hgsid=1656497518_Oi4KCCWcBnE3r8kqOCovV8y](https://github.com/p4rkerw/dpcr_design/assets/53058914/aae86718-6fbe-43ec-9bd1-ce75c79b792f)
+
+2. We will now extract the nucleotide sequence of GAPDH using the ucsc table browser [link](https://genome.ucsc.edu/cgi-bin/hgTables?hgsid=1662123772_FpXeaHHsKgAAMUB54s7ucnMIsOVX&hgta_nextIntersectGroup=varRep&hgta_nextIntersectTrack=dbSnp155Composite&hgta_nextIntersectTable=dbSnp155Common&hgta_nextIntersectOp=none&hgta_nextMoreThreshold=100&hgta_nextLessThreshold=80&boolshad.hgta_nextInvertTable=0&boolshad.hgta_nextInvertTable2=0&hgta_doIntersectSubmit=submit). Here you can see that we have entered the genomic coordinates for GAPDH.
+
+![genome ucsc edu_cgi-bin_hgTables_hgsid=1656497518_Oi4KCCWcBnE3r8kqOCovV8yU3WR2 clade=mammal org=Human db=hg38 hgta_group=map hgta_track=gold hgta_table=0 hgta_regionType=range position=chr12%3A6%2C534%2C517-6%2C538](https://github.com/p4rkerw/dpcr_design/assets/53058914/95a03760-5f49-4d72-8182-267b3eb4dbb3)
 
 
-![genome ucsc edu_cgi-bin_hgTracks_db=hg38 lastVirtModeType=default lastVirtModeExtraState= virtModeType=default virtMode=0 nonVirtPosition= position=chrY%3A2786855%2D2787682 hgsid=1662373152_1DFFw2TBAhlHZq7mcWedJA5u](https://github.com/p4rkerw/dpcr_design/assets/53058914/8ca6ace4-736d-406e-a56d-4d11af8a597d)
+3. We have added an optional intersection with dbSNP to exclude regions that have common variants. 
 
-2. We will now extract the nucleotide sequence of SRY using the ucsc table browser [link](https://genome.ucsc.edu/cgi-bin/hgTables?hgsid=1662123772_FpXeaHHsKgAAMUB54s7ucnMIsOVX&hgta_nextIntersectGroup=varRep&hgta_nextIntersectTrack=dbSnp155Composite&hgta_nextIntersectTable=dbSnp155Common&hgta_nextIntersectOp=none&hgta_nextMoreThreshold=100&hgta_nextLessThreshold=80&boolshad.hgta_nextInvertTable=0&boolshad.hgta_nextInvertTable2=0&hgta_doIntersectSubmit=submit). Here you can see that we have entered the genomic coordinates for SRY.
-
-![genome ucsc edu_cgi-bin_hgTables_hgsid=1662123772_FpXeaHHsKgAAMUB54s7ucnMIsOVX clade=mammal org=Human db=hg38 hgta_group=genes hgta_track=gold hgta_table=0 hgta_regionType=range position=chrY%3A2%2C786%2C855-2%2C78](https://github.com/p4rkerw/dpcr_design/assets/53058914/c5f4634d-36b2-42a0-b11f-2461e70963a0)
+![genome ucsc edu_cgi-bin_hgTables](https://github.com/p4rkerw/dpcr_design/assets/53058914/6b2c1f50-0d4b-4a48-ae66-2f611b3bd14b)
 
 
-3. We have added an optional intersection with dbSNP to exclude regions that have common variants. There are no common variants in the SRY gene body, but this step will be important in the future for handling regions that do contain variants. 
+4. We now select Get Output to arrive at the screen below. We ask ucsc to mask any repetitive elements with N. 
 
-![genome ucsc edu_cgi-bin_hgTables](https://github.com/p4rkerw/dpcr_design/assets/53058914/66f8a3bb-ea6d-4a9e-b902-bdf513a2d1c1)
-
-4. We now select Get Output > Genomic to arrive at the screen below. We will retrieve all coding sequences (CDS) from SRY exons. We also ask ucsc to mask any repetitive elements with N. 
-
-![genome ucsc edu_cgi-bin_hgTables_hgsid=1662376742_cPo2aKJyODUdf7GS7DVtMeya2tSI hgta_geneSeqType=genomic hgta_doGenePredSequence=submit](https://github.com/p4rkerw/dpcr_design/assets/53058914/01163689-5451-45f5-aa6e-5ad41e98dfb1)
+![genome ucsc edu_cgi-bin_hgTables (1)](https://github.com/p4rkerw/dpcr_design/assets/53058914/dba1d260-3eeb-4150-ac18-fd31fe07ad86)
 
 
-5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY.
+5. Here is the sequence.
 ```
->hg38_knownGene_ENST00000383070.2_1 range=chrY:2786989-2787603 5'pad=0 3'pad=0 strand=- repeatMasking=N
-ATGCAATCATATGCTTCTGCTATGTTAAGCGTATTCAACAGCGATGATTA
-CAGTCCAGCTGTGCAAGAGAATATTCCCGCTCTCCGGAGAAGCTCTTCCT
-TCCTTTGCACTGAAAGCTGTAACTCTAAGTATCAGTGTGAAACGGGAGAA
-AACAGTAAAGGCAACGTCCAGGATAGAGTGAAGCGACCCATGAACGCATT
-CATCGTGTGGTCTCGCGATCAGAGGCGCAAGATGGCTCTAGAGAATCCCA
-GAATGCGAAACTCAGAGATCAGCAAGCAGCTGGGATACCAGTGGAAAATG
-CTTACTGAAGCCGAAAAATGGCCATTCTTCCAGGAGGCACAGAAATTACA
-GGCCATGCACAGAGAGAAATACCCGAATTATAAGTATCGACCTCGTCGGA
-AGGCGAAGATGCTGCCGAAGAATTGCAGTTTGCTTCCCGCAGATCCCGCT
-TCGGTACTCTGCAGCGAAGTGCAACTGGACAACAGGTTGTACAGGGATGA
-CTGTACGAAAGCCACACACTCAAGAATGGAGCACCAGCTAGGCCACTTAC
-CGCCCATCAACGCAGCCAGCTCACCGCAGCAACGGGACCGCTACAGCCAC
-TGGACAAAGCTGTAG
+>hg38_gold_chr12.1 range=chr12:6534517-6534536 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GCTCTCTGCTCCTCCTGTTC
+>hg38_gold_chr12.2 range=chr12:6534538-6534713 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+ACAGTCAGCCGCATCTTCTTTTGCGTCGCCAGGTGAAGACGGGCGGAGAG
+AAACCCGGGAGGCTAGGGACGGCCTGAAGGCGGCAGGGGCGGGCGCAGGC
+CGGATGTGTTCGCGCCGCTGCGGGGTGGGCCCGGGCGGCCTCCGCATTGC
+AGGGGCGGGCGGAGGACGTGATGCGG
+>hg38_gold_chr12.3 range=chr12:6534715-6534760 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GCGGGCTGGGCATGGAGGCCTGGTGGGGGAGGGGAGGGGAGGCGTG
+>hg38_gold_chr12.4 range=chr12:6534762-6534824 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GTGTCGGCCGGGGCCACTAGGCGCTCACTGTTCTCTCCCTCCGCGCAGCC
+GAGCCACATCGCT
+>hg38_gold_chr12.5 range=chr12:6534826-6534918 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+AGACACCATGGGGAAGGTGAAGGTCGGAGTCAACGGGTGAGTTCGCGGGT
+GGCTGGGGGGCCCTGGGCTGCGACCGCCCCCGAACCGCGTCTA
+>hg38_gold_chr12.6 range=chr12:6534920-6534944 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GAGCCTTGCGGGCTCCGGGTCTTTG
+>hg38_gold_chr12.7 range=chr12:6534946-6534972 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+AGTCGTATGGGGGCAGGGTAGCTGTTC
+>hg38_gold_chr12.8 range=chr12:6534974-6535060 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+CCGCAAGGAGAGCTCAAGGTCAGCGCTCGGACCTGGCGGAGCCCCGCACC
+CAGGCTGTGGCGCCCTGTGCAGCTCCGCCCTTGCGGC
+>hg38_gold_chr12.9 range=chr12:6535062-6535089 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+CCATCTGCCCGGAGCCTCCTTCCCCTAG
+>hg38_gold_chr12.10 range=chr12:6535091-6535404 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+CCCCAGAAACAGGAGGTCCCTACTCCCGCCCGAGATCCCGACCCGGACCC
+CTAGGTGGGGGACGCTTTCTTTCCTTTCGCGCTCTGCGGGGTCACGTGTC
+GCAGAGGAGCCCCTCCCCCACGGCCTCCGGCACCGCAGGCCCCGGGATGC
+TAGTGCGCAGCGGGTGCATCCCTGTCCGGATGCTGCGCCTGCGGTAGAGC
+GGCCGCCATGTTGCAACCGGGAAGGAAATGAATGGGCAGCCGTTAGGAAA
+GCCTGCCGGTGACTAACCCTGCGCTCCTGCCTCGATGGGTGGAGTCGCGT
+GTGGCGGGGAAGTC
+>hg38_gold_chr12.11 range=chr12:6535406-6535500 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GGTGGAGCGAGGCTAGCTGGCCCGATTTCTCCTCCGGGTGATGCTTTTCC
+TAGATTATTCTCTGGTAAATCAAAGAAGTGGGTTTATGGAGGTCC
+>hg38_gold_chr12.12 range=chr12:6535502-6535529 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+CTTGTGTCCCCTCCCCGCAGAGGTGTGG
+>hg38_gold_chr12.13 range=chr12:6535531-6535555 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GGCTGTGGCATGGTGCCAAGCCGGG
+>hg38_gold_chr12.14 range=chr12:6535557-6535614 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GAAGCTGAGTCATGGGTAGTTGGAAAAGGACATTTCCACCGCAAAATGGC
+CCCTCTGG
+>hg38_gold_chr12.15 range=chr12:6535616-6535648 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GGTGGCCCCTTCCTGCAGCGCCGGCTCACCTCA
+>hg38_gold_chr12.16 range=chr12:6535650-6535791 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GGCCCCGCCCTTCCCCTGCCAGCCTAGCGTTGACCCGACCCCAAAGGCCA
+GGCTGTAAATGTCACCGGGAGGATTGGGTGTCTGGGCGCCTCGGGGAACC
+TGCCCTTCTCCCCATTCCGTCTTCCGGAAACCAGATCTCCCA
+>hg38_gold_chr12.17 range=chr12:6535793-6535907 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+CGCACCCTGGTCTGAGGTTAAATATAGCTGCTGACCTTTCTGTAGCTGGG
+GGCCTGGGCTGGGGCTCTCTCCCATCCCTTCTCCCCACACACATGCACTT
+ACCTGTGCTCCCACT
+>hg38_gold_chr12.18 range=chr12:6535910-6536031 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+TGATTTCTGGAAAAGAGCTAGGAAGGACAGGCAACTTGGCAAATCAAAGC
+CCTGGGACTAGGGGGTTAAAATACAGCTTCCCCTCTTCCCACCCGCCCCA
+GTCTCTGTCCCTTTTGTAGGAG
+>hg38_gold_chr12.19 range=chr12:6536033-6536398 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GACTTAGAGAAGGGGTGGGCTTGCCCTGTCCAGTTAATTTCTGACCTTTA
+CTCCTGCCCTTTGAGTTTGATGATGCTGAGTGTACAAGCGTTTTCTCCCT
+AAAGGGTGCAGCTGAGCTAGGCAGCAGCAAGCATTCCTGGGGTGGCATAG
+TGGGGTGGTGAATACCATGTACAAAGCTTGTGCCCAGACTGTGGGTGGCA
+GTGCCCCACATGGCCGCTTCTCCTGGAAGGGCTTCGTATGACTGGGGGTG
+TTGGGCAGCCCTGGAGCCTTCAGTTGCAGCCATGCCTTAAGCCAGGCCAG
+CCTGGCAGGGAAGCTCAAGGGAGATAAAATTCAACCTCTTGGGCCCTCCT
+GGGGGTAAGGAGATGC
+>hg38_gold_chr12.20 range=chr12:6536400-6537066 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GCATTCGCCCTCTTAATGGGGAGGTGGCCTAGGGCTGCTCACATATTCTG
+GAGGAGCCTCCCCTCCTCATGCCTTCTTGCCTCTTGTCTCTTAGATTTGG
+TCGTATTGGGCGCCTGGTCACCAGGGCTGCTTTTAACTCTGGTAAAGTGG
+ATATTGTTGCCATCAATGACCCCTTCATTGACCTCAACTACATGGTGAGT
+GCTACATGGTGAGCCCCAAAGCTGGTGTGGGAGGAGCCACCTGGCTGATG
+GGCAGCCCCTTCATACCCTCACGTATTCCCCCAGGTTTACATGTTCCAAT
+ATGATTCCACCCATGGCAAATTCCATGGCACCGTCAAGGCTGAGAACGGG
+AAGCTTGTCATCAATGGAAATCCCATCACCATCTTCCAGGAGTGAGTGGA
+AGACAGAATGGAAGAAATGTGCTTTGGGGAGGCAACTAGGATGGTGTGGC
+TCCCTTGGGTATATGGTAACCTTGTGTCCCTCAATATGGTCCTGTCCCCA
+TCTCCCCCCCACCCCCATAGGCGAGATCCCTCCAAAATCAAGTGGGGCGA
+TGCTGGCGCTGAGTACGTCGTGGAGTCCACTGGCGTCTTCACCACCATGG
+AGAAGGCTGGGGTGAGTGCAGGAGGGCCCGCGGGAGGGGAAGCTGACTCA
+GCCCTGCAAAGGCAGGA
+>hg38_gold_chr12.21 range=chr12:6537068-6537153 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+CCGGGTTCATAACTGTCTGCTTCTCTGCTGTAGGCTCATTTGCAGGGGGG
+AGCCAAAAGGGTCATCATCTCTGCCCCCTCTGCTGA
+>hg38_gold_chr12.22 range=chr12:6537155-6537942 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+GCCCCCATGTTCGTCATGGGTGTGAACCATGAGAAGTATGACAACAGCCT
+CAAGATCATCAGGTGAGGAAGGCAGGGCCCGTGGAGAAGCGGCCAGCCTG
+GCACCCTATGGACACGCTCCCCTGACTTGCGCCCCGCTCCCTCTTTCTTT
+GCAGCAATGCCTCCTGCACCACCAACTGCTTAGCACCCCTGGCCAAGGTC
+ATCCATGACAACTTTGGTATCGTGGAAGGACTCATGGTATGAGAGCTGGG
 ```
 
-6. Double check that the sequence you have maps to SRY exon 1 by copying the sequence and pasting it unto [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) . Make sure the genome is set to Human. BLAT will return the following results. If you click on the browser link next to the match with the top score, it will take you back to the expected region in SRY. You can also try the same thing with the upstream promoter sequence.
+We will take the largest block from the above sequence:
+```
+GCATTCGCCCTCTTAATGGGGAGGTGGCCTAGGGCTGCTCACATATTCTG
+GAGGAGCCTCCCCTCCTCATGCCTTCTTGCCTCTTGTCTCTTAGATTTGG
+TCGTATTGGGCGCCTGGTCACCAGGGCTGCTTTTAACTCTGGTAAAGTGG
+ATATTGTTGCCATCAATGACCCCTTCATTGACCTCAACTACATGGTGAGT
+GCTACATGGTGAGCCCCAAAGCTGGTGTGGGAGGAGCCACCTGGCTGATG
+GGCAGCCCCTTCATACCCTCACGTATTCCCCCAGGTTTACATGTTCCAAT
+ATGATTCCACCCATGGCAAATTCCATGGCACCGTCAAGGCTGAGAACGGG
+AAGCTTGTCATCAATGGAAATCCCATCACCATCTTCCAGGAGTGAGTGGA
+AGACAGAATGGAAGAAATGTGCTTTGGGGAGGCAACTAGGATGGTGTGGC
+TCCCTTGGGTATATGGTAACCTTGTGTCCCTCAATATGGTCCTGTCCCCA
+TCTCCCCCCCACCCCCATAGGCGAGATCCCTCCAAAATCAAGTGGGGCGA
+TGCTGGCGCTGAGTACGTCGTGGAGTCCACTGGCGTCTTCACCACCATGG
+AGAAGGCTGGGGTGAGTGCAGGAGGGCCCGCGGGAGGGGAAGCTGACTCA
+GCCCTGCAAAGGCAGGA
+```
 
-![genome ucsc edu_cgi-bin_hgBlat](https://github.com/p4rkerw/dpcr_design/assets/53058914/dc59a939-c0d8-4a6f-bcb2-992cebd99a77)
+6. Double check that the sequence you have maps to GAPDH by copying the sequence and pasting it unto [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) . Make sure the genome is set to Human. BLAT will return the following results. If you click on the browser link next to the match with the top score, it will take you to a multi-exon spanning region in GAPDH with no common variants or repetitive elements. 
+
+![genome ucsc edu_cgi-bin_hgBlat](https://github.com/p4rkerw/dpcr_design/assets/53058914/e1eddad0-2571-4edf-9da7-a41c0c4b24f4)
+
 
 7. Now that we have our sequence there are multiple options for primer design. The first and simplest option is to enter the sequence into the ThermoFisher primer design tool [link](https://www.thermofisher.com/order/custom-assay-design-tool/). This approach will design a primer and determine if its compatible with the hTERT and/or RNaseP CNV references, however, it will not give you the primer sequences. A better solution is to use Primer Express. In Primer Express, you can upload your sequence by creating a new TaqMan MGB quantification document and pasting it in the box. Click the green arrow to automatically design primers and probes
 
-<img width="1119" alt="Screenshot 2023-07-21 082626" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/73cd970e-3272-49e1-be29-27217cf8b8cf">
 
 8. The top match gives us the following primers and probes:
-F - GCGACCCATGAACGCATT
-R - GCCATCTTGCGCCTCTGA
-P - CGTGTGGTCTCGCG
+F - ATGCTGGCGCTGAGTACGT
+R - GCCTTCTCCATGGTGGTGAA
+P - TGGAGTCCACTGGCG
 
-9. We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. In this case, we are analyzing exon 1 of SRY so it does not matter. However, if your target region is non-coding, this option may be a valuable crosscheck. Submit the results and check the results below:
-![www ncbi nlm nih gov_tools_primer-blast_index cgi (2)](https://github.com/p4rkerw/dpcr_design/assets/53058914/d176bb5b-293f-4211-b0e2-c7d9ccfbbf43)
+9. We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. Submit the results and check the results below:
+Here are the primer blast results. Note how there are products that are not on the GAPDH template. This analysis does not take the probe into consideration, which adds another layer of specificity, but there are products that are a perfect match which is a concern. We can always try the next primer/probe option or a different target region. 
 
-10. Here are the primer blast results. Note how there are products that are not on the SRY template, but they are not a perfect match. This analysis does not take the probe into consideration, which adds another layer of specificity. All of the primer / probe combinations generated by Primer Express will probably be fine, but cou can also try the next primer/probe option or you can try a different target region. 
-
-![www ncbi nlm nih gov_tools_primer-blast_primertool cgi_ctg_time=1689942989 job_key=radzvp9kksy19gLzD5MmwXWIN_NYmyzuWQ CheckStatus=Check (2)](https://github.com/p4rkerw/dpcr_design/assets/53058914/a2743710-657d-428e-8176-1f8becbb5eed)
+![www ncbi nlm nih gov_tools_primer-blast_primertool cgi_ctg_time=1689947109 job_key=RU-bVqIgr4iItqqzp9OOgd3In7Pw24Su8Q (1)](https://github.com/p4rkerw/dpcr_design/assets/53058914/b32250a8-37d0-40ae-bd74-0d3529843d8e)
