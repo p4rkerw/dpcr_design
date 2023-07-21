@@ -119,20 +119,19 @@ TGGACAAAGCTGTAG
 
 <img width="1322" alt="Screenshot 2023-07-21 090023" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/c8ab6706-05f0-46cf-ae55-cbc7fb75fca3">
 
-15. Another source for target regions is the Biorad digital pcr assay database. These assays have been wet lab validated, but they do not provide the primer / probe sequences. We can find a predesigned SRY assay here [link](https://www.bio-rad.com/digital-assays/assay-detail/dHsaCP2500472) and copy the primer context below
+15. Another source for target regions is the Biorad digital pcr assay database. These assays have been wet lab validated, but they do not provide the primer / probe sequences. We can find a predesigned SRY assay here [link](https://www.bio-rad.com/digital-assays/assay-detail/dHsaCP2500472) and copy the primer context below. Note how this context is on the + strand and our context is on the - strand. 
 
 ```
 hg19|chrY:2655430-2655552:+
 CGAGACCACACGATGAATGCGTTCATGGGTCGCTTCACTCTATCCTGGACGTTGCCTTTACTGTTTTCTCCCGTTTCACACTGATACTTAGAGTTACAGCTTTCAGTGCAAAGGAAGGAAGAG
 ```
+If we use the biorad SRY sequence for primer express we get the following primers and probes:
 
-16. If we use the biorad sequence to input into primer express we get the following primers and probes:
 - F - CGAGACCACACGATGAATGC
 - R - GTAAAGGCAACGTCCAGGATAGA
 - P - TTCATGGGTCGCTTCA
 
-17. You can also select one of the recommended reference regions from their list: AP3B1(dHsaCP2500348) , EIF2C1(dHsaCP2500349) , RPP30(dHsaCP2500350) , TERT(dHsaCP2500351)
-The AP3B1 has the following context:
+16. You can also select one of the recommended reference regions from the biorad list: AP3B1(dHsaCP2500348) , EIF2C1(dHsaCP2500349) , RPP30(dHsaCP2500350) , TERT(dHsaCP2500351). AP3B1 has the following context:
 ```
 hg19|chr5:77358602-77358724:+
 GCTGCAATATTTCTTCAGGTCTGCAGAGTCATAATTAAAGCTGAACTGAGCGGAATTGGAGAGGGAAGGTCAGCGAGGTGCCGTATGAGAGATGAGGCTGGGCTGATGGGCACCAAATGAACA
@@ -142,7 +141,6 @@ and primer express gives the following primers and probes:
 - F - AAGCTGAACTGAGCGGAATTG
 - R - CCCAGCCTCATCTCTCATACG
 - P - AGAGGGAAGGTCAGCG
-
 
 
 
