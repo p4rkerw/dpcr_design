@@ -37,29 +37,15 @@ CGCCCATCAACGCAGCCAGCTCACCGCAGCAACGGGACCGCTACAGCCAC
 TGGACAAAGCTGTAG
 ```
 
-This is exon 1 of SRY:
-```
->hg38_knownGene_ENST00000383070.2_1 range=chrY:2786989-2787603 5'pad=0 3'pad=0 strand=- repeatMasking=N
-ATGCAATCATATGCTTCTGCTATGTTAAGCGTATTCAACAGCGATGATTA
-CAGTCCAGCTGTGCAAGAGAATATTCCCGCTCTCCGGAGAAGCTCTTCCT
-TCCTTTGCACTGAAAGCTGTAACTCTAAGTATCAGTGTGAAACGGGAGAA
-AACAGTAAAGGCAACGTCCAGGATAGAGTGAAGCGACCCATGAACGCATT
-CATCGTGTGGTCTCGCGATCAGAGGCGCAAGATGGCTCTAGAGAATCCCA
-GAATGCGAAACTCAGAGATCAGCAAGCAGCTGGGATACCAGTGGAAAATG
-CTTACTGAAGCCGAAAAATGGCCATTCTTCCAGGAGGCACAGAAATTACA
-GGCCATGCACAGAGAGAAATACCCGAATTATAAGTATCGACCTCGTCGGA
-AGGCGAAGATGCTGCCGAAGAATTGCAGTTTGCTTCCCGCAGATCCCGCT
-TCGGTACTCTGCAGCGAAGTGCAACTGGACAACAGGTTGTACAGGGATGA
-CTGTACGAAAGCCACACACTCAAGAATGGAGCACCAGCTAGGCCACTTAC
-CGCCCATCAACGCAGCCAGCTCACCGCAGCAACGGGACCGCTACAGCCAC
-TGGACAAAGCTGTAG
-```
 
 6. Double check that the sequence you have maps to SRY exon 1 by copying the sequence and pasting it unto [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) . Make sure the genome is set to Human. BLAT will return the following results. If you click on the browser link next to the match with the top score, it will take you back to the expected region in SRY. You can also try the same thing with the upstream promoter sequence.
 
 ![genome ucsc edu_cgi-bin_hgBlat](https://github.com/p4rkerw/dpcr_design/assets/53058914/dc59a939-c0d8-4a6f-bcb2-992cebd99a77)
 
-7. 
+7. Now that we have our sequence there are multiple options for primer design. The first and simplest option is to enter the sequence into the ThermoFisher primer design tool [link](https://www.thermofisher.com/order/custom-assay-design-tool/). This approach will design a primer and determine if its compatible with the hTERT and/or RNaseP CNV references, however, it will not give you the primer sequences. A better solution is to use Primer Express. In Primer Express, you can upload your sequence by creating a new TaqMan MGB quantification document and pasting it in the box. Click the green arrow to automatically design primers and probes
+
+<img width="1119" alt="Screenshot 2023-07-21 082626" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/73cd970e-3272-49e1-be29-27217cf8b8cf">
+
 
 
 
