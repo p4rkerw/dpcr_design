@@ -165,9 +165,9 @@ and here are the BLAT results:
 this region maps to intron 2 of GAPDH and appears to be far more specific than the previous region
 
 11. We will now put our new region into primer express and the top match gives us the following primers and probes:
-F - GCCCTTTGAGTTTGATGATGCT
-R - GCTCAGCTGCACCCTTTAGG
-P - AGTGTACAAGCGTTTTC
+- F - GCCCTTTGAGTTTGATGATGCT 
+- R - GCTCAGCTGCACCCTTTAGG 
+- P - AGTGTACAAGCGTTTTC 
 
 12.  We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. Submit the results and check the results below:
 The primer blast results indicate that this primer combination is only predicted to amplify a single target in the desired region. 
