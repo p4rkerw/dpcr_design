@@ -89,7 +89,7 @@ Here are some general primer design tips:
 
 ![www ncbi nlm nih gov_tools_primer-blast_primertool cgi_ctg_time=1689957493 job_key=QkicUaovp4eAuaK8r9yGjtXHl7z41Iyh-Q](https://github.com/p4rkerw/dpcr_design/assets/53058914/de54f9de-ad4b-4616-9ddf-d1657a45e9d0)
 
-12. Another source for target regions is the Biorad digital pcr assay database. These assays have been wet lab validated, but they do not provide the primer / probe sequences. We can find a predesigned SRY assay here [link](https://www.bio-rad.com/digital-assays/assay-detail/dHsaCP2500472) and copy the primer context below. Note how this context is on the + strand and our context is on the - strand. 
+12. Another source for target regions is the Biorad digital pcr assay database. These assays have been wet lab validated, but they do not provide the primer / probe sequences. We can find a predesigned SRY assay [here](https://www.bio-rad.com/digital-assays/assay-detail/dHsaCP2500472) and copy the primer context below. Note how this context is on the + strand. 
 
 ```
 hg19|chrY:2655430-2655552:+
