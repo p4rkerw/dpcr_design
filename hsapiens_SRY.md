@@ -46,9 +46,9 @@ TGGACAAAGCTGTAG
 <img width="1119" alt="Screenshot 2023-07-21 082626" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/73cd970e-3272-49e1-be29-27217cf8b8cf">
 
 8. The top match gives us the following primers and probes:
-F - GCGACCCATGAACGCATT
-R - GCCATCTTGCGCCTCTGA
-P - CGTGTGGTCTCGCG
+- F - GCGACCCATGAACGCATT
+- R - GCCATCTTGCGCCTCTGA
+- P - CGTGTGGTCTCGCG
 
 Here are some general primer design tips:
 - In general, a length of 18–30 nucleotides for primers is good.
@@ -127,9 +127,9 @@ CGAGACCACACGATGAATGCGTTCATGGGTCGCTTCACTCTATCCTGGACGTTGCCTTTACTGTTTTCTCCCGTTTCACA
 ```
 
 16. If we use the biorad sequence to input into primer express we get the following primers and probes:
-F - CGAGACCACACGATGAATGC
-R - GTAAAGGCAACGTCCAGGATAGA
-P - TTCATGGGTCGCTTCA
+- F - CGAGACCACACGATGAATGC
+- R - GTAAAGGCAACGTCCAGGATAGA
+- P - TTCATGGGTCGCTTCA
 
 17. You can also select one of the recommended reference regions from their list: AP3B1(dHsaCP2500348) , EIF2C1(dHsaCP2500349) , RPP30(dHsaCP2500350) , TERT(dHsaCP2500351)
 The AP3B1 has the following context:
@@ -139,9 +139,9 @@ GCTGCAATATTTCTTCAGGTCTGCAGAGTCATAATTAAAGCTGAACTGAGCGGAATTGGAGAGGGAAGGTCAGCGAGGTG
 ```
 
 and primer express gives the following primers and probes:
-F - AAGCTGAACTGAGCGGAATTG
-R - CCCAGCCTCATCTCTCATACG
-P - AGAGGGAAGGTCAGCG
+- F - AAGCTGAACTGAGCGGAATTG
+- R - CCCAGCCTCATCTCTCATACG
+- P - AGAGGGAAGGTCAGCG
 
 
 
