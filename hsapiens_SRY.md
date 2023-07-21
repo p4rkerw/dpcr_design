@@ -125,6 +125,9 @@ TGGACAAAGCTGTAG
 hg19|chrY:2655430-2655552:+
 CGAGACCACACGATGAATGCGTTCATGGGTCGCTTCACTCTATCCTGGACGTTGCCTTTACTGTTTTCTCCCGTTTCACACTGATACTTAGAGTTACAGCTTTCAGTGCAAAGGAAGGAAGAG
 ```
+You can confirm that this sequence maps to SRY with BLAT. If you want to flank with up- or downstream context you can use the Get DNA in Window tool from ucsc [link](https://genome-euro.ucsc.edu/cgi-bin/hgc?hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w&o=72121019&g=getDna&i=mixed&c=chr17&l=72121019&r=72126420&db=hg38&hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w)
+
+
 If we use the biorad SRY sequence for primer express we get the following primers and probes:
 
 - F - CGAGACCACACGATGAATGC
