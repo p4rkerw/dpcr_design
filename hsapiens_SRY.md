@@ -18,9 +18,7 @@ This workflow describes how to create custom digital PCR primers targeting human
 ![genome ucsc edu_cgi-bin_hgTables_hgsid=1662376742_cPo2aKJyODUdf7GS7DVtMeya2tSI hgta_geneSeqType=genomic hgta_doGenePredSequence=submit](https://github.com/p4rkerw/dpcr_design/assets/53058914/01163689-5451-45f5-aa6e-5ad41e98dfb1)
 
 
-5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY. Note that the strand is indicated as "-", which in this case is the coding sense strand. This is likely because SRY is transcribed from right to left if you zoom out in the ucsc genome browser. The opposite of the sense strand is the antisense or template strand. Note that Primer Express uses the sense strand for RNA primer design. This distinction is not critical for DNA-based assays, but by convention, primers are often designed targeting the + strand.
-
-![image](https://github.com/p4rkerw/dpcr_design/assets/53058914/05ac272c-92b5-42dd-9b2f-214f78a959b0)
+5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY. Note that the strand is indicated as "-", which in this case is the coding sense strand. The opposite of the sense strand is the antisense or template strand (see diagram below). Note that Primer Express uses the coding sense strand for RNA primer design. This distinction is not critical for DNA-based assays (because DNA is double stranded), but by convention, primers are often designed targeting the + strand. 
 
 ```
 >hg38_knownGene_ENST00000383070.2_1 range=chrY:2786989-2787603 5'pad=0 3'pad=0 strand=- repeatMasking=N
@@ -38,8 +36,9 @@ CTGTACGAAAGCCACACACTCAAGAATGGAGCACCAGCTAGGCCACTTAC
 CGCCCATCAACGCAGCCAGCTCACCGCAGCAACGGGACCGCTACAGCCAC
 TGGACAAAGCTGTAG
 ```
+![image](https://github.com/p4rkerw/dpcr_design/assets/53058914/05ac272c-92b5-42dd-9b2f-214f78a959b0)
 
-To get the context from the + strand you can use the get dna from window tool located [here](https://genome-euro.ucsc.edu/cgi-bin/hgc?hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w&o=72121019&g=getDna&i=mixed&c=chr17&l=72121019&r=72126420&db=hg38&hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w)
+To get the sequence context from the + strand you can use the get dna from window tool located [here](https://genome-euro.ucsc.edu/cgi-bin/hgc?hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w&o=72121019&g=getDna&i=mixed&c=chr17&l=72121019&r=72126420&db=hg38&hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w)
 
 6. Double check that the sequence you have maps to SRY exon 1 by copying the sequence and pasting it unto [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) . Make sure the genome is set to Human. BLAT will return the following results. If you click on the browser link next to the match with the top score, it will take you back to the expected region in SRY. You can also try the same thing with the upstream promoter sequence.
 
