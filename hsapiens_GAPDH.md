@@ -144,6 +144,36 @@ R - GCCTTCTCCATGGTGGTGAA
 P - TGGAGTCCACTGGCG
 
 9. We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. Submit the results and check the results below:
-Here are the primer blast results. Note how there are products that are not on the GAPDH template. This analysis does not take the probe into consideration, which adds another layer of specificity, but there are products that are a perfect match which is a concern. We can always try the next primer/probe option or a different target region. 
+Here are the primer blast results. Note how there are products that are not on the GAPDH template. This analysis does not take the probe into consideration, which adds another layer of specificity, but there are products that are a perfect match which is a concern. Also, remember that this region had a significant amount of overlap with regions on other chromosomes. We can always try the next primer/probe option, but in this case we will use a different target region. 
 
 ![www ncbi nlm nih gov_tools_primer-blast_primertool cgi_ctg_time=1689947109 job_key=RU-bVqIgr4iItqqzp9OOgd3In7Pw24Su8Q (1)](https://github.com/p4rkerw/dpcr_design/assets/53058914/b32250a8-37d0-40ae-bd74-0d3529843d8e)
+
+10. Here is our new target region that we will BLAT
+```
+GACTTAGAGAAGGGGTGGGCTTGCCCTGTCCAGTTAATTTCTGACCTTTA
+CTCCTGCCCTTTGAGTTTGATGATGCTGAGTGTACAAGCGTTTTCTCCCT
+AAAGGGTGCAGCTGAGCTAGGCAGCAGCAAGCATTCCTGGGGTGGCATAG
+TGGGGTGGTGAATACCATGTACAAAGCTTGTGCCCAGACTGTGGGTGGCA
+GTGCCCCACATGGCCGCTTCTCCTGGAAGGGCTTCGTATGACTGGGGGTG
+TTGGGCAGCCCTGGAGCCTTCAGTTGCAGCCATGCCTTAAGCCAGGCCAG
+CCTGGCAGGGAAGCTCAAGGGAGATAAAATTCAACCTCTTGGGCCCTCCT
+GGGGGTAAGGAGATGC
+```
+and here are the BLAT results:
+![genome ucsc edu_cgi-bin_hgBlat](https://github.com/p4rkerw/dpcr_design/assets/53058914/ad768fb2-4a5d-41e3-be84-2383936422fc)
+
+this region maps to intron 2 of GAPDH and appears to be far more specific than the previous region
+
+11. We will now put our new region into primer express and the top match gives us the following primers and probes:
+F - GCCCTTTGAGTTTGATGATGCT
+R - GCTCAGCTGCACCCTTTAGG
+P - AGTGTACAAGCGTTTTC
+
+12.  We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. Submit the results and check the results below:
+The primer blast results indicate that this primer combination is only predicted to amplify a single target in the desired region. 
+
+![www ncbi nlm nih gov_tools_primer-blast_primertool cgi_ctg_time=1689948096 job_key=LSfzPsshxonht8OyztLngLTJ9rKZ2u2vmA](https://github.com/p4rkerw/dpcr_design/assets/53058914/c1ac747f-420c-42ec-a014-eda0b6fdb5cc)
+
+
+
+
