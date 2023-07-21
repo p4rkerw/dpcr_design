@@ -18,7 +18,7 @@ This workflow describes how to create custom digital PCR primers targeting human
 ![genome ucsc edu_cgi-bin_hgTables_hgsid=1662376742_cPo2aKJyODUdf7GS7DVtMeya2tSI hgta_geneSeqType=genomic hgta_doGenePredSequence=submit](https://github.com/p4rkerw/dpcr_design/assets/53058914/01163689-5451-45f5-aa6e-5ad41e98dfb1)
 
 
-5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY. Note that the strand is indicated as "-", which in this case is the sense strand. By convention, you would typically take the antisense template on the "+" strand to design primers because that's what's works for RNA-based assays. For DNA-based assays, it doesn't really matter. 
+5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY. Note that the strand is indicated as "-", which in this case is the coding sense strand. This is likely because SRY is transcribed from right to left if you zoom out in the ucsc genome browser. The opposite of the sense strand is the antisense or template strand. Note that Primer Express uses the sense strand for primer design. This distinction is not critical for DNA-based assays, but is key for RNA-based assays. 
 
 ![image](https://github.com/p4rkerw/dpcr_design/assets/53058914/05ac272c-92b5-42dd-9b2f-214f78a959b0)
 
