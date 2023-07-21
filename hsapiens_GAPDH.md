@@ -130,7 +130,7 @@ AGAAGGCTGGGGTGAGTGCAGGAGGGCCCGCGGGAGGGGAAGCTGACTCA
 GCCCTGCAAAGGCAGGA
 ```
 
-6. Double check that the sequence you have maps to GAPDH by copying the sequence and pasting it unto [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) . Make sure the genome is set to Human. BLAT will return the following results. If you click on the browser link next to the match with the top score, it will take you to a multi-exon spanning region in GAPDH with no common variants or repetitive elements. 
+6. Double check that the sequence you have maps to GAPDH by copying the sequence and pasting it unto [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) . Make sure the genome is set to Human. BLAT will return the following results. If you click on the browser link next to the match with the top score, it will take you to a multi-exon spanning region in GAPDH with no common variants or repetitive elements. Note how there are regions on other chromosomes that match a significant portion of our region. This is usually a bad sign that our selected region is not specific enough for primer design, but we will proceed to see what happens. 
 
 ![genome ucsc edu_cgi-bin_hgBlat](https://github.com/p4rkerw/dpcr_design/assets/53058914/e1eddad0-2571-4edf-9da7-a41c0c4b24f4)
 
