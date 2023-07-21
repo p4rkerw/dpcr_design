@@ -51,14 +51,14 @@ R - GCCATCTTGCGCCTCTGA
 P - CGTGTGGTCTCGCG
 
 Here are some general primer design tips:
--In general, a length of 18–30 nucleotides for primers is good.
--Try to make the melting temperature (Tm) of the primers between 65°C and 75°C, and within 5°C of each other.
--If the Tm of your primer is very low, try to find a sequence with more GC content, or extend the length of the primer a little.
--Aim for the GC content to be between 40 and 60%, with the 3' of a primer ending in C or G to promote binding.
--Typically, 3 to 4 nucleotides are added 5’ of the restriction enzyme site in the primer to allow for efficient cutting.
--Try to avoid regions of secondary structure, and have a balanced distribution of GC-rich and AT-rich domains.
--Try to avoid runs of 4 or more of one base, or dinucleotide repeats (for example, ACCCC or ATATATAT).
--Avoid intra-primer homology (more than 3 bases that complement within the primer) or inter-primer homology (forward and reverse primers having complementary sequences).  These circumstances can lead to self-dimers or primer-dimers instead of annealing to the desired DNA sequences.
+- In general, a length of 18–30 nucleotides for primers is good.
+- Try to make the melting temperature (Tm) of the primers between 65°C and 75°C, and within 5°C of each other.
+- If the Tm of your primer is very low, try to find a sequence with more GC content, or extend the length of the primer a little.
+- Aim for the GC content to be between 40 and 60%, with the 3' of a primer ending in C or G to promote binding.
+- Typically, 3 to 4 nucleotides are added 5’ of the restriction enzyme site in the primer to allow for efficient cutting.
+- Try to avoid regions of secondary structure, and have a balanced distribution of GC-rich and AT-rich domains.
+- Try to avoid runs of 4 or more of one base, or dinucleotide repeats (for example, ACCCC or ATATATAT).
+- Avoid intra-primer homology (more than 3 bases that complement within the primer) or inter-primer homology (forward and reverse primers having complementary sequences).  These circumstances can lead to self-dimers or primer-dimers instead of annealing to the desired DNA sequences.
 
 10. We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. In this case, we are analyzing exon 1 of SRY so it does not matter. However, if your target region is non-coding, this option may be a valuable crosscheck. Submit the results and check the results below:
 ![www ncbi nlm nih gov_tools_primer-blast_index cgi (2)](https://github.com/p4rkerw/dpcr_design/assets/53058914/d176bb5b-293f-4211-b0e2-c7d9ccfbbf43)
