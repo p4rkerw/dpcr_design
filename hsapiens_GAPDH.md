@@ -139,9 +139,9 @@ GCCCTGCAAAGGCAGGA
 
 
 8. The top match gives us the following primers and probes:
-F - ATGCTGGCGCTGAGTACGT
-R - GCCTTCTCCATGGTGGTGAA
-P - TGGAGTCCACTGGCG
+- F - ATGCTGGCGCTGAGTACGT
+- R - GCCTTCTCCATGGTGGTGAA
+- P - TGGAGTCCACTGGCG
 
 9. We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. Submit the results and check the results below:
 Here are the primer blast results. Note how there are products that are not on the GAPDH template. This analysis does not take the probe into consideration, which adds another layer of specificity, but there are products that are a perfect match which is a concern. Also, remember that this region had a significant amount of overlap with regions on other chromosomes. We can always try the next primer/probe option, but in this case we will use a different target region. 
