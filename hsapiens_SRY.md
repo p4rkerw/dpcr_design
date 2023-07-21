@@ -1,4 +1,4 @@
-This workflow describes how to create custom digital PCR primers targeting the promoter region OR exon 1 of human SRY
+This workflow describes how to create custom digital PCR primers targeting human SRY
 
 1. First examine SRY using the ucsc genome browser [link](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chrY%3A2786855%2D2787682&hgsid=1662373152_1DFFw2TBAhlHZq7mcWedJA5uZpN8) Note how SRY has a single exon and that there are no common variants in the dbSNP tracks. SNVs can affect probe binding and should be avoided if possible. There are also no repetitive elements in the repeat masker track. It is difficult to design probes that involve repetitive elements because there is a risk they will bind multiple regions in the genome with the same element.
 
@@ -119,6 +119,19 @@ TGGACAAAGCTGTAG
 
 <img width="1322" alt="Screenshot 2023-07-21 090023" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/c8ab6706-05f0-46cf-ae55-cbc7fb75fca3">
 
+15. Another source for target regions is the Biorad digital pcr assay database. These assays have been wet lab validated, but they do not provide the primer / probe sequences. We can find a predesigned SRY assay here [link](https://www.bio-rad.com/digital-assays/assay-detail/dHsaCP2500472) and copy the primer context below
+
+```
+hg19|chrY:2655430-2655552:+
+CGAGACCACACGATGAATGCGTTCATGGGTCGCTTCACTCTATCCTGGACGTTGCCTTTACTGTTTTCTCCCGTTTCACACTGATACTTAGAGTTACAGCTTTCAGTGCAAAGGAAGGAAGAG
+```
+
+16. If we use the biorad sequence to input into primer express we get the following primers and probes:
+F - CGAGACCACACGATGAATGC
+R - GTAAAGGCAACGTCCAGGATAGA
+P - TTCATGGGTCGCTTCA
+
+17. You can also select one of the recommended reference regions from their list: AP3B1(dHsaCP2500348) , EIF2C1(dHsaCP2500349) , RPP30(dHsaCP2500350) , TERT(dHsaCP2500351)
 
 
 
