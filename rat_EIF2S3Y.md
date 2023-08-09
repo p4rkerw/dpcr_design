@@ -44,6 +44,7 @@ CTTGAGGCATTATATCCAACATCATGAGTAAAACAA
 
 3. We will now check this sequence with BLAT to ensure that it's specific to our target region. Note how it has a very high score for the entire length of the sequence on the target chromosome.
 
+```
    ACTIONS      QUERY   SCORE START   END QSIZE IDENTITY  CHROM  STRAND  START       END   SPAN
 -----------------------------------------------------------------------------------------------
 browser details YourSeq   686     1   686   686   100.0%  chrY   +      872224    872909    686
@@ -61,12 +62,14 @@ browser details YourSeq    21   249   269   686   100.0%  chr1   -   148717082 1
 browser details YourSeq    21   244   264   686   100.0%  chr1   +   131095589 131095609     21
 browser details YourSeq    20   311   330   686   100.0%  chr12  -    11335492  11335511     20
 browser details YourSeq    20   103   122   686   100.0%  chr10  -    25776961  25776980     20
+```
 
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
 
-Forward Primer:TGCTACCAAAGTTGCAGTTATCCT
-Reverse Primer:AGGTGATACCAAAAACCAAAAGGT
-Probe: AGATTTATGTGCCTCAGGGT
+- Forward Primer:TGCTACCAAAGTTGCAGTTATCCT 
+- Reverse Primer:AGGTGATACCAAAAACCAAAAGGT 
+- Probe: AGATTTATGTGCCTCAGGGT 
+
 We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Rattus norvegicus to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence.
 
 ```
