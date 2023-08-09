@@ -1,119 +1,78 @@
-This workflow describes how to create custom digital PCR primers targeting human SRY
+dPCR primer and probe design for human chromosome Y
 
-1. First examine SRY using the ucsc genome browser [link](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chrY%3A2786855%2D2787682&hgsid=1662373152_1DFFw2TBAhlHZq7mcWedJA5uZpN8) Note how SRY has a single exon and that there are no common variants in the dbSNP tracks. SNVs can affect probe binding and should be avoided if possible. There are also no repetitive elements in the repeat masker track. It is difficult to design probes that involve repetitive elements because there is a risk they will bind multiple regions in the genome with the same element.
+1. First examine SRY on long arm using the ucsc genome browser [link](http://www.genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chrY%3A2786855%2D2787682&hgsid=1672248776_rpAp1gzGpHanU8vktIpY5I6kzS0Y) SNVs can affect probe binding and should be avoided if possible. There are also repetitive elements in the repeat masker track. It is difficult to design probes that involve repetitive elements because there is a risk they will bind multiple regions in the genome with the same element.
 
-![genome ucsc edu_cgi-bin_hgTracks_db=hg38 lastVirtModeType=default lastVirtModeExtraState= virtModeType=default virtMode=0 nonVirtPosition= position=chrY%3A2786855%2D2787682 hgsid=1662373152_1DFFw2TBAhlHZq7mcWedJA5u](https://github.com/p4rkerw/dpcr_design/assets/53058914/8ca6ace4-736d-406e-a56d-4d11af8a597d)
-
-2. We will now extract the nucleotide sequence of SRY using the ucsc table browser [link](https://genome.ucsc.edu/cgi-bin/hgTables?hgsid=1662123772_FpXeaHHsKgAAMUB54s7ucnMIsOVX&hgta_nextIntersectGroup=varRep&hgta_nextIntersectTrack=dbSnp155Composite&hgta_nextIntersectTable=dbSnp155Common&hgta_nextIntersectOp=none&hgta_nextMoreThreshold=100&hgta_nextLessThreshold=80&boolshad.hgta_nextInvertTable=0&boolshad.hgta_nextInvertTable2=0&hgta_doIntersectSubmit=submit). Here you can see that we have entered the genomic coordinates for SRY.
-
-![genome ucsc edu_cgi-bin_hgTables_hgsid=1662123772_FpXeaHHsKgAAMUB54s7ucnMIsOVX clade=mammal org=Human db=hg38 hgta_group=genes hgta_track=gold hgta_table=0 hgta_regionType=range position=chrY%3A2%2C786%2C855-2%2C78](https://github.com/p4rkerw/dpcr_design/assets/53058914/c5f4634d-36b2-42a0-b11f-2461e70963a0)
-
-
-3. We have added an optional intersection with dbSNP to exclude regions that have common variants. There are no common variants in the SRY gene body, but this step will be important in the future for handling regions that do contain variants. 
-
-![genome ucsc edu_cgi-bin_hgTables](https://github.com/p4rkerw/dpcr_design/assets/53058914/66f8a3bb-ea6d-4a9e-b902-bdf513a2d1c1)
-
-4. We now select Get Output > Genomic to arrive at the screen below. We will retrieve all coding sequences (CDS) from SRY exons. We also ask ucsc to mask any repetitive elements with N. 
-
-![genome ucsc edu_cgi-bin_hgTables_hgsid=1662376742_cPo2aKJyODUdf7GS7DVtMeya2tSI hgta_geneSeqType=genomic hgta_doGenePredSequence=submit](https://github.com/p4rkerw/dpcr_design/assets/53058914/01163689-5451-45f5-aa6e-5ad41e98dfb1)
-
-
-5. Here is the sequence. Note how the fasta file is arranged by ensembl transcripts. The capital letters indicate that this is exon 1 of SRY. Note that the strand is indicated as "-", which in this case is the coding sense strand. The opposite of the sense strand is the antisense or template strand (see diagram below). Note that Primer Express uses the coding sense strand for RNA primer design. This distinction is not critical for DNA-based assays (because DNA is double stranded), but by convention, primers are often designed targeting the + strand. 
+2. We will now extract the nucleotide sequence using the ucsc get dna in window [link](https://genome-euro.ucsc.edu/cgi-bin/hgc?hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w&o=72121019&g=getDna&i=mixed&c=chr17&l=72121019&r=72126420&db=hg38&hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w). We will mask repeats with N. Below is a  chunk of sequence. By convention, we design primers and probes using the + strand rather than the - strand. 
 
 ```
->hg38_knownGene_ENST00000383070.2_1 range=chrY:2786989-2787603 5'pad=0 3'pad=0 strand=- repeatMasking=N
-ATGCAATCATATGCTTCTGCTATGTTAAGCGTATTCAACAGCGATGATTA
-CAGTCCAGCTGTGCAAGAGAATATTCCCGCTCTCCGGAGAAGCTCTTCCT
-TCCTTTGCACTGAAAGCTGTAACTCTAAGTATCAGTGTGAAACGGGAGAA
-AACAGTAAAGGCAACGTCCAGGATAGAGTGAAGCGACCCATGAACGCATT
-CATCGTGTGGTCTCGCGATCAGAGGCGCAAGATGGCTCTAGAGAATCCCA
-GAATGCGAAACTCAGAGATCAGCAAGCAGCTGGGATACCAGTGGAAAATG
-CTTACTGAAGCCGAAAAATGGCCATTCTTCCAGGAGGCACAGAAATTACA
-GGCCATGCACAGAGAGAAATACCCGAATTATAAGTATCGACCTCGTCGGA
-AGGCGAAGATGCTGCCGAAGAATTGCAGTTTGCTTCCCGCAGATCCCGCT
-TCGGTACTCTGCAGCGAAGTGCAACTGGACAACAGGTTGTACAGGGATGA
-CTGTACGAAAGCCACACACTCAAGAATGGAGCACCAGCTAGGCCACTTAC
-CGCCCATCAACGCAGCCAGCTCACCGCAGCAACGGGACCGCTACAGCCAC
-TGGACAAAGCTGTAG
-```
-![image](https://github.com/p4rkerw/dpcr_design/assets/53058914/05ac272c-92b5-42dd-9b2f-214f78a959b0)
-
-To get the sequence context from the + strand you can use the get dna from window tool located [here](https://genome-euro.ucsc.edu/cgi-bin/hgc?hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w&o=72121019&g=getDna&i=mixed&c=chr17&l=72121019&r=72126420&db=hg38&hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w)
-
-Here is the sequence on the + strand
-```
->hg38_dna range=chrY:2786989-2787603 5'pad=0 3'pad=0 strand=+ repeatMasking=N
-CTACAGCTTTGTCCAGTGGCTGTAGCGGTCCCGTTGCTGCGGTGAGCTGG
-CTGCGTTGATGGGCGGTAAGTGGCCTAGCTGGTGCTCCATTCTTGAGTGT
-GTGGCTTTCGTACAGTCATCCCTGTACAACCTGTTGTCCAGTTGCACTTC
-GCTGCAGAGTACCGAAGCGGGATCTGCGGGAAGCAAACTGCAATTCTTCG
-GCAGCATCTTCGCCTTCCGACGAGGTCGATACTTATAATTCGGGTATTTC
-TCTCTGTGCATGGCCTGTAATTTCTGTGCCTCCTGGAAGAATGGCCATTT
-TTCGGCTTCAGTAAGCATTTTCCACTGGTATCCCAGCTGCTTGCTGATCT
-CTGAGTTTCGCATTCTGGGATTCTCTAGAGCCATCTTGCGCCTCTGATCG
-CGAGACCACACGATGAATGCGTTCATGGGTCGCTTCACTCTATCCTGGAC
-GTTGCCTTTACTGTTTTCTCCCGTTTCACACTGATACTTAGAGTTACAGC
-TTTCAGTGCAAAGGAAGGAAGAGCTTCTCCGGAGAGCGGGAATATTCTCT
-TGCACAGCTGGACTGTAATCATCGCTGTTGAATACGCTTAACATAGCAGA
-AGCATATGATTGCAT
+>hg38_dna range=chrY:2786855-2787682 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+TGAAATGAATAAGGCCTTTATTAGCCAGAGAAAAGAAAACAATATTGAAA
+CTAAACATAAGAAAGTGAGGGCTGTAAGTTATCGTAAAAAGGAGCATCTA
+GGTAGGTCTTTGTAGCCAATGTTACCCGATTGTCCTACAGCTTTGTCCAG
+TGGCTGTAGCGGTCCCGTTGCTGCGGTGAGCTGGCTGCGTTGATGGGCGG
+TAAGTGGCCTAGCTGGTGCTCCATTCTTGAGTGTGTGGCTTTCGTACAGT
+CATCCCTGTACAACCTGTTGTCCAGTTGCACTTCGCTGCAGAGTACCGAA
+GCGGGATCTGCGGGAAGCAAACTGCAATTCTTCGGCAGCATCTTCGCCTT
+CCGACGAGGTCGATACTTATAATTCGGGTATTTCTCTCTGTGCATGGCCT
+GTAATTTCTGTGCCTCCTGGAAGAATGGCCATTTTTCGGCTTCAGTAAGC
+ATTTTCCACTGGTATCCCAGCTGCTTGCTGATCTCTGAGTTTCGCATTCT
+GGGATTCTCTAGAGCCATCTTGCGCCTCTGATCGCGAGACCACACGATGA
+ATGCGTTCATGGGTCGCTTCACTCTATCCTGGACGTTGCCTTTACTGTTT
+TCTCCCGTTTCACACTGATACTTAGAGTTACAGCTTTCAGTGCAAAGGAA
+GGAAGAGCTTCTCCGGAGAGCGGGAATATTCTCTTGCACAGCTGGACTGT
+AATCATCGCTGTTGAATACGCTTAACATAGCAGAAGCATATGATTGCATT
+GTCAAAAACAAGGAGAGTGCGACAAAATTGAAAGGTGCCAGAGTTCGAAA
+CTTATTTTACTATCCAAAACTCACTTCT
 ```
 
-6. Double check that the sequence you have maps to SRY exon 1 by copying the sequence and pasting it unto [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) . Make sure the genome is set to Human. BLAT will return the following results. If you click on the browser link next to the match with the top score, it will take you back to the expected region in SRY. 
-
-![genome ucsc edu_cgi-bin_hgBlat](https://github.com/p4rkerw/dpcr_design/assets/53058914/3b807ac5-d0d4-4498-89eb-16b2d7b07960)
-
-7. Now that we have our sequence there are multiple options for primer design. The first and simplest option is to enter the sequence into the ThermoFisher primer design tool [link](https://www.thermofisher.com/order/custom-assay-design-tool/). This approach will design a primer and determine if its compatible with the hTERT and/or RNaseP CNV references, however, it will not give you the primer sequences. A better solution is to use Primer Express. In Primer Express, you can upload your sequence by creating a new TaqMan MGB quantification document and pasting it in the box. Click the green arrow to automatically design primers and probes
-
-<img width="1056" alt="Screenshot 2023-07-21 123522" src="https://github.com/p4rkerw/dpcr_design/assets/53058914/b3a47490-e75c-44c3-b59d-27b39348df4c">
-
-8. The top match gives us the following primers and probes:
-- F - GCGTTGATGGGCGGTAAGT
-- R - ACGAAAGCCACACACTCAAGAA
-- P - CCTAGCTGGTGCTCC
-
-Here are some general primer design tips:
-- In general, a length of 18–30 nucleotides for primers is good.
-- Try to make the melting temperature (Tm) of the primers between 65°C and 75°C, and within 5°C of each other.
-- If the Tm of your primer is very low, try to find a sequence with more GC content, or extend the length of the primer a little.
-- Aim for the GC content to be between 40 and 60%, with the 3' of a primer ending in C or G to promote binding.
-- Typically, 3 to 4 nucleotides are added 5’ of the restriction enzyme site in the primer to allow for efficient cutting.
-- Try to avoid regions of secondary structure, and have a balanced distribution of GC-rich and AT-rich domains.
-- Try to avoid runs of 4 or more of one base, or dinucleotide repeats (for example, ACCCC or ATATATAT).
-- Avoid intra-primer homology (more than 3 bases that complement within the primer) or inter-primer homology (forward and reverse primers having complementary sequences).  These circumstances can lead to self-dimers or primer-dimers instead of annealing to the desired DNA sequences.
-
-10. We will now confirm that this primer set will amplify the region of interest using primer blast [link](https://www.ncbi.nlm.nih.gov/tools/primer-blast/index.cgi) . Enter our target sequence and forward and reverse primers as shown below. Change the database to Genomes for selected eukaryotic organisms highlighted in yellow. The RefSeq database only covers transcribed genes and does not include non-coding regions. In this case, we are analyzing exon 1 of SRY so it does not matter. However, if your target region is non-coding, this option may be a valuable crosscheck. Submit the results and check the results below:
-![www ncbi nlm nih gov_tools_primer-blast_index cgi](https://github.com/p4rkerw/dpcr_design/assets/53058914/da049acd-7c97-46c5-8754-521792c671a1)
 
 
-11. Here are the primer blast results, which show that a single predicted product. This analysis does not take the probe into consideration, which adds another layer of specificity. All of the primer / probe combinations generated by Primer Express will probably be fine, but cou can also try the next primer/probe option or you can try a different target region. 
-
-![www ncbi nlm nih gov_tools_primer-blast_primertool cgi_ctg_time=1689957493 job_key=QkicUaovp4eAuaK8r9yGjtXHl7z41Iyh-Q](https://github.com/p4rkerw/dpcr_design/assets/53058914/de54f9de-ad4b-4616-9ddf-d1657a45e9d0)
-
-12. Another source for target regions is the Biorad digital pcr assay database. These assays have been wet lab validated, but they do not provide the primer / probe sequences. We can find a predesigned SRY assay [here](https://www.bio-rad.com/digital-assays/assay-detail/dHsaCP2500472) and copy the primer context below. Note how this context is on the + strand. 
+3. We will now check this sequence with BLAT to ensure that it's specific to our target region. Note how it has a very high score for the entire length of the sequence in target region. 
 
 ```
-hg19|chrY:2655430-2655552:+
-CGAGACCACACGATGAATGCGTTCATGGGTCGCTTCACTCTATCCTGGACGTTGCCTTTACTGTTTTCTCCCGTTTCACACTGATACTTAGAGTTACAGCTTTCAGTGCAAAGGAAGGAAGAG
+   ACTIONS      QUERY   SCORE START   END QSIZE IDENTITY  CHROM  STRAND  START       END   SPAN
+-----------------------------------------------------------------------------------------------
+browser details YourSeq   828     1   828   828   100.0%  chrY   +     2786855   2787682    828
+browser details YourSeq    61   473   563   828    83.6%  chr13  -   112067818 112067908     91
+browser details YourSeq    29   540   572   828    94.0%  chr16  -      982226    982258     33
+browser details YourSeq    26   482   514   828    75.9%  chr17  -    31801605  31801633     29
+browser details YourSeq    26   384   421   828    75.0%  chr1   -     5887897   5887927     31
+browser details YourSeq    26    26    55   828    82.2%  chr17  +    57252821  57252848     28
+browser details YourSeq    25    24    50   828    88.5%  chr1   +   155419801 155419826     26
+browser details YourSeq    22    41    63   828   100.0%  chr16  +    72297875  72297898     24
+browser details YourSeq    22   471   493   828   100.0%  chr1   +    59407244  59407268     25
+browser details YourSeq    21   397   419   828    95.7%  chr17  -    54606864  54606886     23
+browser details YourSeq    20   397   418   828    95.5%  chr2   -    90150600  90150621     22
+browser details YourSeq    20    56    75   828   100.0%  chr19  -    22042640  22042659     20
+browser details YourSeq    20   400   421   828    95.5%  chr18  -    78522546  78522567     22
+browser details YourSeq    20   397   418   828    95.5%  chr2   +    89049946  89049967     22
+browser details YourSeq    20   621   640   828   100.0%  chr12  +    90610298  90610317     20
 ```
-You can confirm that this sequence maps to SRY with BLAT. If you want to flank with up- or downstream context you can use the Get DNA in Window tool from ucsc [link](https://genome-euro.ucsc.edu/cgi-bin/hgc?hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w&o=72121019&g=getDna&i=mixed&c=chr17&l=72121019&r=72126420&db=hg38&hgsid=226600623_EcMYrC757dFyLJ6OyJROM4LHm80w)
 
+4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
 
-If we use the biorad SRY sequence for primer express we get the following primers and probes:
-
-- F - CGAGACCACACGATGAATGC
-- R - GTAAAGGCAACGTCCAGGATAGA
-- P - TTCATGGGTCGCTTCA
-
-13. You can also select one of the recommended reference regions from the biorad list: AP3B1(dHsaCP2500348) , EIF2C1(dHsaCP2500349) , RPP30(dHsaCP2500350) , TERT(dHsaCP2500351). AP3B1 has the following context:
 ```
-hg19|chr5:77358602-77358724:+
-GCTGCAATATTTCTTCAGGTCTGCAGAGTCATAATTAAAGCTGAACTGAGCGGAATTGGAGAGGGAAGGTCAGCGAGGTGCCGTATGAGAGATGAGGCTGGGCTGATGGGCACCAAATGAACA
+Forward Primer:GCGTTGATGGGCGGTAAGT
+Reverse Primer:ACGAAAGCCACACACTCAAGAA
+Probe: CCTAGCTGGTGCTCC
 ```
 
-and primer express gives the following primers and probes:
-- F - AAGCTGAACTGAGCGGAATTG
-- R - CCCAGCCTCATCTCTCATACG
-- P - AGAGGGAAGGTCAGCG
+5. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
+
+```
+>NC_000024.10 Homo sapiens chromosome Y, GRCh38.p14 Primary Assembly
+
+product length = 59
+Features associated with this product:
+   sex-determining region y protein
+
+Forward primer  1        GCGTTGATGGGCGGTAAGT  19
+Template        2787041  ...................  2787059
+
+Reverse primer  1        ACGAAAGCCACACACTCAAGAA  22
+Template        2787099  ......................  2787078
+```
+
 
 
 
