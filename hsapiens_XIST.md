@@ -20,3 +20,43 @@ AACCCCCAAGATATGGGTCAACTTTATCACCTCAAACTCTACTCATTTAT
 AATGACAAAATTCAACTGTTAACACATAGGTAAGAGTTCTTCAGGCATCG
 GTTTTAAAGGTCCATGTACTG
 ```
+
+3. We will now check this sequence with BLAT to ensure that it's specific to our target region. Note how it has a very high score for the entire length of the sequence on chrX. 
+
+```
+   ACTIONS      QUERY   SCORE START   END QSIZE IDENTITY  CHROM  STRAND  START       END   SPAN
+-----------------------------------------------------------------------------------------------
+browser details YourSeq   621     1   621   621   100.0%  chrX   +    73818598  73819218    621
+browser details YourSeq    28   249   336   621    56.7%  chr10  -    90968001  90968040     40
+browser details YourSeq    21   504   524   621   100.0%  chr19  -    44174191  44174211     21
+browser details YourSeq    20   208   227   621   100.0%  chr13  +   101624687 101624706     20
+```
+
+4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
+
+```
+Forward Primer:AGGGATGGACAAAGGAACAGAA
+Reverse Primer:GGTGAGGCGGTAAGGAGACTT
+Probe: ACACTCAAGAATAACTTC
+```
+
+5. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
+
+```
+>NC_000023.11 Homo sapiens chromosome X, GRCh38.p14 Primary Assembly
+
+product length = 65
+Features flanking this product:
+   137942 bp at 5' side: cysteine-rich hydrophobic domain-containing protein 1 iso...
+   485256 bp at 3' side: zinc finger cchc domain-containing protein 13
+
+Forward primer  1         AGGGATGGACAAAGGAACAGAA  22
+Template        73818946  ......................  73818967
+
+Reverse primer  1         GGTGAGGCGGTAAGGAGACTT  21
+Template        73819010  .....................  73818990
+
+```
+
+
+
