@@ -35,7 +35,7 @@ browser details YourSeq    20   208   227   621   100.0%  chr13  +   101624687 1
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
 
 ```
-Forward Primer:AGGGATGGACAAAGGAACAGAA
+Forward Primer:GAGGGATGGACAAAGGAACAGA
 Reverse Primer:GGTGAGGCGGTAAGGAGACTT
 Probe: ACACTCAAGAATAACTTC
 ```
@@ -45,13 +45,13 @@ Probe: ACACTCAAGAATAACTTC
 ```
 >NC_000023.11 Homo sapiens chromosome X, GRCh38.p14 Primary Assembly
 
-product length = 65
+product length = 66
 Features flanking this product:
-   137942 bp at 5' side: cysteine-rich hydrophobic domain-containing protein 1 iso...
+   137941 bp at 5' side: cysteine-rich hydrophobic domain-containing protein 1 iso...
    485256 bp at 3' side: zinc finger cchc domain-containing protein 13
 
-Forward primer  1         AGGGATGGACAAAGGAACAGAA  22
-Template        73818946  ......................  73818967
+Forward primer  1         GAGGGATGGACAAAGGAACAGA  22
+Template        73818945  ......................  73818966
 
 Reverse primer  1         GGTGAGGCGGTAAGGAGACTT  21
 Template        73819010  .....................  73818990
