@@ -35,9 +35,9 @@ browser details YourSeq    20   208   227   621   100.0%  chr13  +   101624687 1
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
 
 ```
-Forward Primer:AGGGATGGACAAAGGAACAGAA
-Reverse Primer:AGGTGAGGCGGTAAGGAGACTT
-Probe: ACACTCAAGAATAACTTCA
+Forward Primer:GGAGATACGGTGTTTTTCATTTCC
+Reverse Primer:GTCCTCAAATTCCTTGATTCTCTTG
+Probe: CTCCCTTCAAATTTT
 ```
 
 5. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
@@ -47,14 +47,14 @@ Probe: ACACTCAAGAATAACTTCA
 
 product length = 66
 Features flanking this product:
-   137942 bp at 5' side: cysteine-rich hydrophobic domain-containing protein 1 iso...
-   485255 bp at 3' side: zinc finger cchc domain-containing protein 13
+   137783 bp at 5' side: cysteine-rich hydrophobic domain-containing protein 1 iso...
+   485414 bp at 3' side: zinc finger cchc domain-containing protein 13
 
-Forward primer  1         AGGGATGGACAAAGGAACAGAA  22
-Template        73818946  ......................  73818967
+Forward primer  1         GGAGATACGGTGTTTTTCATTTCC  24
+Template        73818787  ........................  73818810
 
-Reverse primer  1         AGGTGAGGCGGTAAGGAGACTT  22
-Template        73819011  ......................  73818990
+Reverse primer  1         GTCCTCAAATTCCTTGATTCTCTTG  25
+Template        73818852  .........................  73818828
 
 ```
 
