@@ -1,6 +1,5 @@
-Biorad planning ddPCR experiments guide: https://www.bio-rad.com/en-us/life-science/learning-center/introduction-to-digital-pcr/planning-ddpcr-experiments 
-
-TaqMan Assay Multiplex PCR Optimization Guide: http://assets.thermofisher.com/TFS-Assets/LSG/manuals/taqman_optimization_man.pdf
+- Biorad planning ddPCR experiments guide: https://www.bio-rad.com/en-us/life-science/learning-center/introduction-to-digital-pcr/planning-ddpcr-experiments 
+- TaqMan Assay Multiplex PCR Optimization Guide: http://assets.thermofisher.com/TFS-Assets/LSG/manuals/taqman_optimization_man.pdf
 
 Multiplex primer design tips:
 1. The primer melting temperature (Tm) should be the same for all primers used in the multiplex
