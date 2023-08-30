@@ -62,7 +62,7 @@ Reverse primer  1         GATCCACCCAGCCACCCTATA  21
 Template        11824860  .....................  11824840
 ```
 
-7. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design
+7. Check that the amplicon length is between 75-150 and that the melting temperatures are comparable to other primers in the multiplex design
 ```
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
 Forward primer	ACGTGGCGGATGAAAGTCA	Plus	19	233	251	59.63	52.63	4.00	3.00
