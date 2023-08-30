@@ -31,24 +31,17 @@ browser details YourSeq    20   141   160   427   100.0%  chr1   -   203990252 2
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the a primer / probe combination for which the F and R primers have the same Tm for our target region
 
 ```
-Forward Primer:TCTCAGTGCTGCCAGATCCA
-Reverse Primer:CAGCACGGAACTGTGCCTAA
-Probe: AGGCTCGAAGCATC
+Forward Primer:ACGTGGCGGATGAAAGTCA
+Reverse Primer:GATCCACCCAGCCACCCTATA
+Probe: TGCTTCCATAGCCATCA
 ```
 
 5. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html 
 ```
 Name 	Sequence             	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
-chr1F	tctcagtgctgccagatcca 	67.8	55.0	20	4.0	5.0	7.0	4.0	184200.0                         	6053.0                 	5.4 	32.9
-chr1R	cagcacggaactgtgcctaa 	66.6	55.0	20	6.0	3.0	6.0	5.0	193400.0                         	6111.0                 	5.2 	31.6
-chr1P	aggctcgaagcatc       	52.8	57.1	14	4.0	2.0	4.0	4.0	137200.0                         	4272.8                 	7.3 	31.1
-chrXF	tcaagagggatggacaaagga	66.1	47.6	21	9.0	2.0	2.0	8.0	227300.0                         	6577.4                 	4.4 	28.9
-chrXR	ggtgaggcggtaaggagactt	65.8	57.1	21	5.0	4.0	2.0	10.0	214200.0                         	6591.3                 	4.7 	30.8
-chrXP	cagaagacactcaagaata  	50.4	36.8	19	10.0	2.0	4.0	3.0	203700.0                         	5822.9                 	4.9 	28.6
-chrYF	tttctgtgcctcctggaagaa	66.3	47.6	21	4.0	7.0	5.0	5.0	194300.0                         	6412.2                 	5.1 	33.0
-chrYR	tgggataccagtggaaaatgc	66.0	47.6	21	7.0	4.0	3.0	7.0	213800.0                         	6519.3                 	4.7 	30.5
-chrYP	ccatttttcggcttcag    	59.9	47.1	17	2.0	7.0	5.0	3.0	149300.0                         	5127.4                 	6.7 	34.3
-
+chr1F	acgtggcggatgaaagtca  	67.1	52.6	19	6.0	3.0	3.0	7.0	196000.0                         	5901.9                 	5.1 	30.1
+chr1R	gatccacccagccaccctata	67.2	57.1	21	6.0	3.0	10.0	2.0	196600.0                         	6280.1                 	5.1 	31.9
+chr1P	tgcttccatagccatca    	59.4	47.1	17	4.0	5.0	6.0	2.0	157000.0                         	5105.4                 	6.4 	32.5
 ```
 
 6. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
@@ -56,25 +49,25 @@ chrYP	ccatttttcggcttcag    	59.9	47.1	17	2.0	7.0	5.0	3.0	149300.0               
 ```
 >NC_000001.11 Homo sapiens chromosome 1, GRCh38.p14 Primary Assembly
 
-product length = 69
+product length = 75
 Features associated with this product:
    h(+)/cl(-) exchange transporter 6 isoform 1
 
    h(+)/cl(-) exchange transporter 6 isoform 2
 
-Forward primer  1         TCTCAGTGCTGCCAGATCCA  20
-Template        11824862  ....................  11824881
+Forward primer  1         ACGTGGCGGATGAAAGTCA  19
+Template        11824786  ...................  11824804
 
-Reverse primer  1         CAGCACGGAACTGTGCCTAA  20
-Template        11824930  ....................  11824911
+Reverse primer  1         GATCCACCCAGCCACCCTATA  21
+Template        11824860  .....................  11824840
 ```
 
 7. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design
 ```
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	TCTCAGTGCTGCCAGATCCA	Plus	20	309	328	60.91	55.00	5.00	0.00
-Reverse primer	CAGCACGGAACTGTGCCTAA	Minus	20	377	358	60.60	55.00	6.00	1.00
-Product length	69
+Forward primer	ACGTGGCGGATGAAAGTCA	Plus	19	233	251	59.63	52.63	4.00	3.00
+Reverse primer	GATCCACCCAGCCACCCTATA	Minus	21	307	287	60.77	57.14	4.00	4.00
+Product length	75
 ```
 
 
