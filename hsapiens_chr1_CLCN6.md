@@ -33,9 +33,9 @@ browser details YourSeq    20   141   160   427   100.0%  chr1   -   203990252 2
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
 
 ```
-Forward Primer:ATATAGGGTGGCTGGGTGGAT
-Reverse Primer:CGATGCTTCGAGCCTCTTG
-Probe: ATCTCAGTGCTGCCAGAT
+Forward Primer:CTGGGCCAAATCCATTGG
+Reverse Primer:GCCAGAATGGCACCAGGTT
+Probe: ACACCCTGACATCACAT
 ```
 
 5. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
@@ -43,16 +43,35 @@ Probe: ATCTCAGTGCTGCCAGAT
 ```
 >NC_000001.11 Homo sapiens chromosome 1, GRCh38.p14 Primary Assembly
 
-product length = 60
+product length = 58
 Features associated with this product:
    h(+)/cl(-) exchange transporter 6 isoform 1
 
    h(+)/cl(-) exchange transporter 6 isoform 2
 
-Forward primer  1         ATATAGGGTGGCTGGGTGGAT  21
-Template        11824839  .....................  11824859
+Forward primer  1         CTGGGCCAAATCCATTGG  18
+Template        11824613  ..................  11824630
 
-Reverse primer  1         CGATGCTTCGAGCCTCTTG  19
-Template        11824898  ...................  11824880
+Reverse primer  1         GCCAGAATGGCACCAGGTT  19
+Template        11824670  ...................  11824652
 ```
+
+7. Check that the amplicon length is between 50-150 and comparable to other amplicons in the multiplex design
+```
+
+Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CTGGGCCAAATCCATTGG	Plus	18	60	77	55.98	55.56	5.00	5.00
+Reverse primer	GCCAGAATGGCACCAGGTT	Minus	19	117	99	60.61	57.89	5.00	3.00
+Product length	58
+
+```
+
+6. Check that the primer melting temperatures for the F and R primers are similar and ensure there are no self-dimers or cross primer dimers using the Multiple Primer Analyzer. Note that the estimated primer melting temperatures may differ from Primer Express or Primer Blast due to a different algorithm
+```
+Name 	Sequence           	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+chr1F	ctgggccaaatccattgg 	66.6	55.6	18	4.0	4.0	5.0	5.0	168600.0                         	5499.6                 	5.9 	32.6
+chr1R	gccagaatggcaccaggtt	67.7	57.9	19	5.0	3.0	5.0	6.0	184700.0                         	5837.8                 	5.4 	31.6
+chr1P	acaccctgacatcacat  	54.5	47.1	17	6.0	3.0	7.0	1.0	162300.0                         	5083.4                 	6.2 	31.3
+```
+
 
