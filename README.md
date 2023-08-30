@@ -1,4 +1,5 @@
-Biorad planning ddPCR experiments guide: https://www.bio-rad.com/en-us/life-science/learning-center/introduction-to-digital-pcr/planning-ddpcr-experiments
+Biorad planning ddPCR experiments guide: https://www.bio-rad.com/en-us/life-science/learning-center/introduction-to-digital-pcr/planning-ddpcr-experiments 
+
 TaqMan Assay Multiplex PCR Optimization Guide: http://assets.thermofisher.com/TFS-Assets/LSG/manuals/taqman_optimization_man.pdf
 
 Multiplex primer design tips:
