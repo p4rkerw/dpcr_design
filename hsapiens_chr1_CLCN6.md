@@ -30,48 +30,46 @@ browser details YourSeq    23   141   164   427   100.0%  chr16  +    16847547  
 browser details YourSeq    20   141   160   427   100.0%  chr1   -   203990252 203990271     20
 ```
 
-4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
+4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the a primer / probe combination for which the F and R primers have the same Tm for our target region
 
 ```
-Forward Primer:CTGGGCCAAATCCATTGG
-Reverse Primer:GCCAGAATGGCACCAGGTT
-Probe: ACACCCTGACATCACAT
+Forward Primer:CAGTGCTGCCAGATCCAAGA
+Reverse Primer:CAGCACGGAACTGTGCCTAA
+Probe: CGAAGCATCGACTGAC
 ```
 
-5. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
+5. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html 
+```
+Name 	Sequence            	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+chr1F	cagtgctgccagatccaaga	67.0	55.0	20	6.0	3.0	6.0	5.0	195400.0                         	6111.0                 	5.1 	31.3
+chr1R	cagcacggaactgtgcctaa	66.6	55.0	20	6.0	3.0	6.0	5.0	193400.0                         	6111.0                 	5.2 	31.6
+chr1P	cgaagcatcgactgac    	56.6	56.3	16	5.0	2.0	5.0	4.0	155800.0                         	4875.2                 	6.4 	31.3
+```
+
+6. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
 
 ```
 >NC_000001.11 Homo sapiens chromosome 1, GRCh38.p14 Primary Assembly
 
-product length = 58
+product length = 66
 Features associated with this product:
    h(+)/cl(-) exchange transporter 6 isoform 1
 
    h(+)/cl(-) exchange transporter 6 isoform 2
 
-Forward primer  1         CTGGGCCAAATCCATTGG  18
-Template        11824613  ..................  11824630
+Forward primer  1         CAGTGCTGCCAGATCCAAGA  20
+Template        11824865  ....................  11824884
 
-Reverse primer  1         GCCAGAATGGCACCAGGTT  19
-Template        11824670  ...................  11824652
+Reverse primer  1         CAGCACGGAACTGTGCCTAA  20
+Template        11824930  ....................  11824911
 ```
 
-6. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design
+7. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design
 ```
-
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	CTGGGCCAAATCCATTGG	Plus	18	60	77	55.98	55.56	5.00	5.00
-Reverse primer	GCCAGAATGGCACCAGGTT	Minus	19	117	99	60.61	57.89	5.00	3.00
-Product length	58
-
-```
-
-7. Check that the primer melting temperatures for the F and R primers are similar and ensure there are no self-dimers or cross primer dimers using the Multiple Primer Analyzer. Note that the estimated primer melting temperatures may differ from Primer Express or Primer Blast due to a different algorithm
-```
-Name 	Sequence           	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
-chr1F	ctgggccaaatccattgg 	66.6	55.6	18	4.0	4.0	5.0	5.0	168600.0                         	5499.6                 	5.9 	32.6
-chr1R	gccagaatggcaccaggtt	67.7	57.9	19	5.0	3.0	5.0	6.0	184700.0                         	5837.8                 	5.4 	31.6
-chr1P	acaccctgacatcacat  	54.5	47.1	17	6.0	3.0	7.0	1.0	162300.0                         	5083.4                 	6.2 	31.3
+Forward primer	CAGTGCTGCCAGATCCAAGA	Plus	20	312	331	60.04	55.00	5.00	1.00
+Reverse primer	CAGCACGGAACTGTGCCTAA	Minus	20	377	358	60.60	55.00	6.00	1.00
+Product length	66
 ```
 
 
