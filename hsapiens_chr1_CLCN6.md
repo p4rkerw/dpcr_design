@@ -17,8 +17,6 @@ CATGGTTTTAGGCACAGTTCCGTGCTGATTCTAGTTGGCGTGGTACAGTC
 ATAATAACTGCTGCTAATTATGGTCTG
 ```
 
-
-
 3. We will now check this sequence with BLAT to ensure that it's specific to our target region. Note how it has a very high score for the entire length of the sequence on chr1. 
 
 ```
@@ -33,9 +31,9 @@ browser details YourSeq    20   141   160   427   100.0%  chr1   -   203990252 2
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the a primer / probe combination for which the F and R primers have the same Tm for our target region
 
 ```
-Forward Primer:CAGTGCTGCCAGATCCAAGA
-Reverse Primer:CAGCACGGAACTGTGCCTAA
-Probe: CGAAGCATCGACTGAC
+Forward Primer:CAGCTGCTTGCTGATCTCTGA
+Reverse Primer:AGAGGCGCAAGATGGCTCTA
+Probe: CGCATTCTGGGATTC
 ```
 
 5. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html 
