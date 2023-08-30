@@ -35,20 +35,23 @@ browser details YourSeq    20   208   227   621   100.0%  chr13  +   101624687 1
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is a primer / probe combination with a melting temperature within 1C of our reference primers. 
 
 ```
-Forward Primer:CCTACACATCCAGCCTTGCA
-Reverse Primer:TTGCTTCTGAACTGGGATGGT
-Probe: ATAAGAGTAAAGAGAAAAGTCCA
+Forward Primer:TCAAGAGGGATGGACAAAGGA
+Reverse Primer:AAAGCAGGTGAGGCGGTAAG
+Probe: CAGAAGACACTCAAGAAT
 ```
 
 5. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html
 ```
-Name 	Sequence               	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
-chr1F	acgtggcggatgaaagtca    	67.1	52.6	19	6.0	3.0	3.0	7.0	196000.0                         	5901.9                 	5.1 	30.1
-chr1R	gatccacccagccaccctata  	67.2	57.1	21	6.0	3.0	10.0	2.0	196600.0                         	6280.1                 	5.1 	31.9
-chr1P	tgcttccatagccatca      	59.4	47.1	17	4.0	5.0	6.0	2.0	157000.0                         	5105.4                 	6.4 	32.5
-chrXF	cctacacatccagccttgca   	66.5	55.0	20	5.0	4.0	9.0	2.0	181200.0                         	5981.9                 	5.5 	33.0
-chrXR	ttgcttctgaactgggatggt  	66.1	47.6	21	3.0	8.0	3.0	7.0	194500.0                         	6483.3                 	5.1 	33.3
-chrXP	ataagagtaaagagaaaagtcca	55.3	30.4	23	13.0	3.0	2.0	5.0	258800.0                         	7146.8                 	3.9 	27.6
+Name 	Sequence             	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+chr1F	acgtggcggatgaaagtca  	67.1	52.6	19	6.0	3.0	3.0	7.0	196000.0                         	5901.9                 	5.1 	30.1
+chr1R	gatccacccagccaccctata	67.2	57.1	21	6.0	3.0	10.0	2.0	196600.0                         	6280.1                 	5.1 	31.9
+chr1P	tgcttccatagccatca    	59.4	47.1	17	4.0	5.0	6.0	2.0	157000.0                         	5105.4                 	6.4 	32.5
+chrXF	tcaagagggatggacaaagga	66.1	47.6	21	9.0	2.0	2.0	8.0	227300.0                         	6577.4                 	4.4 	28.9
+chrXR	aaagcaggtgaggcggtaag 	65.7	55.0	20	7.0	2.0	2.0	9.0	212400.0                         	6280.2                 	4.7 	29.6
+chrXP	cagaagacactcaagaat   	49.9	38.9	18	9.0	2.0	4.0	3.0	189000.0                         	5509.7                 	5.3 	29.2
+chrYF	tgtgcctcctggaagaatgg 	67.8	55.0	20	4.0	5.0	4.0	7.0	190600.0                         	6173.1                 	5.2 	32.4
+chrYR	gatcagcaagcagctgggata	66.8	52.4	21	7.0	3.0	4.0	7.0	214700.0                         	6504.3                 	4.7 	30.3
+chrYP	catttttcggcttcagtaag 	59.5	40.0	20	4.0	8.0	4.0	4.0	186900.0                         	6098.0                 	5.4 	32.6
 ```
 
 
@@ -57,24 +60,24 @@ chrXP	ataagagtaaagagaaaagtcca	55.3	30.4	23	13.0	3.0	2.0	5.0	258800.0            
 ```
 >NC_000023.11 Homo sapiens chromosome X, GRCh38.p14 Primary Assembly
 
-product length = 75
+product length = 76
 Features flanking this product:
-   138021 bp at 5' side: cysteine-rich hydrophobic domain-containing protein 1 iso...
-   485167 bp at 3' side: zinc finger cchc domain-containing protein 13
+   137937 bp at 5' side: cysteine-rich hydrophobic domain-containing protein 1 iso...
+   485250 bp at 3' side: zinc finger cchc domain-containing protein 13
 
-Forward primer  1         CCTACACATCCAGCCTTGCA  20
-Template        73819025  ....................  73819044
+Forward primer  1         TCAAGAGGGATGGACAAAGGA  21
+Template        73818941  .....................  73818961
 
-Reverse primer  1         TTGCTTCTGAACTGGGATGGT  21
-Template        73819099  .....................  73819079
+Reverse primer  1         AAAGCAGGTGAGGCGGTAAG  20
+Template        73819016  ....................  73818997
 
 ```
 6. Check that the amplicon length is between 75-150 and that the melting temperatures are comparable to other primers in the multiplex design
 ```
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	CCTACACATCCAGCCTTGCA	Plus	20	428	447	60.04	55.00	4.00	4.00
-Reverse primer	TTGCTTCTGAACTGGGATGGT	Minus	21	502	482	59.57	47.62	5.00	0.00
-Product length	75
+Forward primer	TCAAGAGGGATGGACAAAGGA	Plus	21	344	364	58.37	47.62	2.00	0.00
+Reverse primer	AAAGCAGGTGAGGCGGTAAG	Minus	20	419	400	60.32	55.00	2.00	0.00
+Product length	76
 ```
 
 
