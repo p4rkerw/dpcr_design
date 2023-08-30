@@ -56,7 +56,7 @@ Reverse primer  1         GCCAGAATGGCACCAGGTT  19
 Template        11824670  ...................  11824652
 ```
 
-7. Check that the amplicon length is between 50-150 and comparable to other amplicons in the multiplex design
+6. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design
 ```
 
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
@@ -66,7 +66,7 @@ Product length	58
 
 ```
 
-6. Check that the primer melting temperatures for the F and R primers are similar and ensure there are no self-dimers or cross primer dimers using the Multiple Primer Analyzer. Note that the estimated primer melting temperatures may differ from Primer Express or Primer Blast due to a different algorithm
+7. Check that the primer melting temperatures for the F and R primers are similar and ensure there are no self-dimers or cross primer dimers using the Multiple Primer Analyzer. Note that the estimated primer melting temperatures may differ from Primer Express or Primer Blast due to a different algorithm
 ```
 Name 	Sequence           	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
 chr1F	ctgggccaaatccattgg 	66.6	55.6	18	4.0	4.0	5.0	5.0	168600.0                         	5499.6                 	5.9 	32.6
