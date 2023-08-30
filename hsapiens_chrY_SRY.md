@@ -49,28 +49,41 @@ browser details YourSeq    20   397   418   828    95.5%  chr2   +    89049946  
 browser details YourSeq    20   621   640   828   100.0%  chr12  +    90610298  90610317     20
 ```
 
-4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
+4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is a primer / probe combination with a similar Tm as the other primers in our multiplex design
 
 ```
-Forward Primer:GCGTTGATGGGCGGTAAGT
-Reverse Primer:ACGAAAGCCACACACTCAAGAA
-Probe: CCTAGCTGGTGCTCC
+Forward Primer:TTTCTGTGCCTCCTGGAAGAA
+Reverse Primer:TGGGATACCAGTGGAAAATGC
+Probe: CCATTTTTCGGCTTCAG
+```
+5. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html 
+```
+Name 	Sequence             	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+chr1F	tctcagtgctgccagatcca 	67.8	55.0	20	4.0	5.0	7.0	4.0	184200.0                         	6053.0                 	5.4 	32.9
+chr1R	cagcacggaactgtgcctaa 	66.6	55.0	20	6.0	3.0	6.0	5.0	193400.0                         	6111.0                 	5.2 	31.6
+chr1P	aggctcgaagcatc       	52.8	57.1	14	4.0	2.0	4.0	4.0	137200.0                         	4272.8                 	7.3 	31.1
+chrXF	tcaagagggatggacaaagga	66.1	47.6	21	9.0	2.0	2.0	8.0	227300.0                         	6577.4                 	4.4 	28.9
+chrXR	ggtgaggcggtaaggagactt	65.8	57.1	21	5.0	4.0	2.0	10.0	214200.0                         	6591.3                 	4.7 	30.8
+chrXP	cagaagacactcaagaata  	50.4	36.8	19	10.0	2.0	4.0	3.0	203700.0                         	5822.9                 	4.9 	28.6
+chrYF	tttctgtgcctcctggaagaa	66.3	47.6	21	4.0	7.0	5.0	5.0	194300.0                         	6412.2                 	5.1 	33.0
+chrYR	tgggataccagtggaaaatgc	66.0	47.6	21	7.0	4.0	3.0	7.0	213800.0                         	6519.3                 	4.7 	30.5
+chrYP	ccatttttcggcttcag    	59.9	47.1	17	2.0	7.0	5.0	3.0	149300.0                         	5127.4                 	6.7 	34.3
 ```
 
-5. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
+6. We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Homo sapiens to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence. 
 
 ```
 >NC_000024.10 Homo sapiens chromosome Y, GRCh38.p14 Primary Assembly
 
-product length = 59
+product length = 65
 Features associated with this product:
    sex-determining region y protein
 
-Forward primer  1        GCGTTGATGGGCGGTAAGT  19
-Template        2787041  ...................  2787059
+Forward primer  1        TTTCTGTGCCTCCTGGAAGAA  21
+Template        2787259  .....................  2787279
 
-Reverse primer  1        ACGAAAGCCACACACTCAAGAA  22
-Template        2787099  ......................  2787078
+Reverse primer  1        TGGGATACCAGTGGAAAATGC  21
+Template        2787323  .....................  2787303
 ```
 
 
