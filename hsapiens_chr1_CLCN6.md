@@ -28,13 +28,50 @@ browser details YourSeq    23   141   164   427   100.0%  chr16  +    16847547  
 browser details YourSeq    20   141   160   427   100.0%  chr1   -   203990252 203990271     20
 ```
 
-4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the a primer / probe combination for which the F and R primers have the same Tm for our target region
+4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the a primer / probe combination for which the F and R primers have the same Tm for our target region. We can modify the default Primer Express parameters as follows:
+
+- Min Primer Tm: 58
+- Max Primer Tm: 59
+- Max Difference in Tm of Two Primers: 1
+- Min Primer %GC Content: 50
+- Max Primer %GC Content: 60
+- Max Primer 3' GC's: 2
+- Primer 3' End Length: 5
+- Primer 3' GC Clamp Residues: 0
+- Min Primer Length: 19
+- Max Primer Length: 21
+- Optimal Primer Length: 20
+- Max Primer G Repeats: 3
+- Max Num Ambig Residues in Primer: 0
+- Max Primer Consec Base Pair: 3
+- Max Primer Total Base Pair: 8
+- Max % Match in Primer: 75
+- Max Consec Match in Primer: 9
+- Max 3' Consec Match in Primer: 7
+- Min Probe Tm: 68
+- Max Probe Tm: 70
+- Min Probe %GC Content: 30
+- Max Probe %GC Content: 80
+- Min Probe Length: 13
+- Max Probe Length: 25
+- Max Probe G Repeats: 3
+- Max Num Ambig Residues in Probe: 0
+- No G at 5' End in Probe: Check
+- Select Probe with more C's than G's: Check
+- Max Probe Consec Base Pair: 4
+- Max Probe Total Base Pair: 8
+- Min Amplified Region Tm: 0
+- Max Amplified Region Tm: 85
+- Min Amplified Region Length: 75
+- Max Amplified Region Length: 150
 
 ```
 Forward Primer:ACGTGGCGGATGAAAGTCA
 Reverse Primer:GATCCACCCAGCCACCCTATA
 Probe: TGCTTCCATAGCCATCA
 ```
+
+Optional: Take the amplicon sequence and put into IDT UNAfold to check for secondary structures that form at a Tm higher than 60C.
 
 5. Check that the amplicon length is between 75-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html 
 ```
