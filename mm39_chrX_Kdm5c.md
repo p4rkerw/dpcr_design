@@ -39,19 +39,18 @@ browser new tab details YourSeq    21   832   852  1060   100.0%  chr19  +    44
 ```
 We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
 ```
-Forward Primer:CGAGTTCCGAGACCCTCTTG
-Reverse Primer:CATCAGCTCCCAGCCTTACC
-Probe: CATCGCGAAAATCAGA
+chrX_Kdm5c_F:TGGCTACATCGCGAAAATCAG
+chrX_Kdm5c_R:CATCAGCTCCCAGCCTTACC
+chrX_Kdm5c_P: CGAGAAGTCCGGCATT
 ```
 
 Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html
 
 ```
-Name        	Sequence            	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
-chrX_Kdm5c_F	cgagttccgagaccctcttg	66.5	60.0	20	3.0	5.0	7.0	5.0	181900.0                         	6069.0                 	5.5 	33.4
-chrX_Kdm5c_R	catcagctcccagccttacc	66.2	60.0	20	4.0	4.0	10.0	2.0	175600.0                         	5957.9                 	5.7 	33.9
-chrX_Kdm5c_P	catcgcgaaaatcaga    	57.2	43.8	16	7.0	2.0	4.0	3.0	165100.0                         	4883.3                 	6.1 	29.6
-
+Name         	Sequence             	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+chrX_Kdm5c_F:	tggctacatcgcgaaaatcag	67.4	47.6	21	7.0	4.0	5.0	5.0	207500.0                         	6439.3                 	4.8 	31.0
+chrX_Kdm5c_R:	catcagctcccagccttacc 	66.2	60.0	20	4.0	4.0	10.0	2.0	175600.0                         	5957.9                 	5.7 	33.9
+chrX_Kdm5c_P:	cgagaagtccggcatt     	60.5	56.3	16	4.0	3.0	4.0	5.0	155900.0                         	4906.3                 	6.4 	31.5
 ```
 
 
