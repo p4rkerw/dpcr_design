@@ -132,9 +132,23 @@ chrX_Clcn5_P:	caggatggctttctt       	51.7	46.7	15	2.0	6.0	3.0	4.0	135900.0      
 chrY_Uty_F:  	ggacaatccaaaatccacgaa 	66.0	42.9	21	10.0	2.0	6.0	3.0	216800.0                         	6401.3                 	4.6 	29.5
 chrY_Uty_R:  	ggtccgcagcaagtttctgt  	66.9	55.0	20	3.0	6.0	5.0	6.0	185200.0                         	6124.0                 	5.4 	33.1
 chrY_Uty_P:  	attttttctgccttgtccaaa 	62.7	33.3	21	4.0	10.0	5.0	2.0	189400.0                         	6337.2                 	5.3 	33.5
-
 ```
 
+Check NCBI primer blast using target BLAT sequence and selected F and R primers for off-target amplification in mouse genome (with an amplicon size in the same range)
+```
+>NC_000087.8 Mus musculus strain C57BL/6J chromosome Y, GRCm39
 
+product length = 101
+Features associated with this product:
+   histone demethylase uty isoform x9
+
+   histone demethylase uty isoform x6
+
+Forward primer  1        GGACAATCCAAAATCCACGAA  21
+Template        1154592  .....................  1154612
+
+Reverse primer  1        GGTCCGCAGCAAGTTTCTGT  20
+Template        1154692  ....................  1154673
+```
 
 
