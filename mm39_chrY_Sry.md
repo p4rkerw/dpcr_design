@@ -80,7 +80,8 @@ browser new tab details YourSeq    72    15   207   774    74.8%  chr6   +   113
 browser new tab details YourSeq    63   184   397   774    88.1%  chr1   +     7495961   7496194    234
 browser new tab details YourSeq    54   105   206   774    88.6%  chr15  +    85040893  85040995    103
 ```
-We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
+We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. 
+```
 Start with the following parameters:
 Min Primer Tm: 58
 Max Primer Tm: 60
@@ -128,8 +129,10 @@ Min Amplified Region Length	75
 Max Amplified Region Length	150
 General	
 Max Primers / Probes	50
-
+```
 Relax the primer length requirement if no ideal primers are found
+Below is the top primer / probe combination for our target region
+
 ```
 chrY_Sry_F: TGCTGAGGTGCTCCTGGTATG
 chrY_Sry_R: CCACGACCAGCAGCTTACCTA
