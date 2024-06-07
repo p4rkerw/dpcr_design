@@ -126,9 +126,9 @@ chr1_Mff_P:  	agcagagcgtaaatag      	48.7	43.8	16	7.0	2.0	2.0	5.0	173400.0      
 chr1_Gsta3_F:	gcccttcctgaccaaatacaca	67.3	50.0	22	7.0	4.0	9.0	2.0	206500.0                         	6608.3                 	4.8 	32.0
 chr1_Gsta3_R:	gccccagggaaatcaattg   	66.7	52.6	19	6.0	3.0	5.0	5.0	187000.0                         	5821.9                 	5.3 	31.1
 chr1_Gsta3_P:	tgtgcacactcaaac       	49.1	46.7	15	5.0	3.0	5.0	2.0	142000.0                         	4521.0                 	7.0 	31.8
-chr1_Clcn5_F:	gccctctgcctaccttatgct 	65.8	57.1	21	2.0	7.0	9.0	3.0	176400.0                         	6284.1                 	5.7 	35.6
-chr1_Clcn5_R:	tgggtggtgcctgatggtat  	67.8	55.0	20	2.0	7.0	2.0	9.0	190400.0                         	6235.1                 	5.3 	32.7
-chr1_Clcn5_P:	caggatggctttctt       	51.7	46.7	15	2.0	6.0	3.0	4.0	135900.0                         	4574.0                 	7.4 	33.7
+chrX_Clcn5_F:	gccctctgcctaccttatgct 	65.8	57.1	21	2.0	7.0	9.0	3.0	176400.0                         	6284.1                 	5.7 	35.6
+chrX_Clcn5_R:	tgggtggtgcctgatggtat  	67.8	55.0	20	2.0	7.0	2.0	9.0	190400.0                         	6235.1                 	5.3 	32.7
+chrX_Clcn5_P:	caggatggctttctt       	51.7	46.7	15	2.0	6.0	3.0	4.0	135900.0                         	4574.0                 	7.4 	33.7
 chrY_Uty_F:  	ggacaatccaaaatccacgaa 	66.0	42.9	21	10.0	2.0	6.0	3.0	216800.0                         	6401.3                 	4.6 	29.5
 chrY_Uty_R:  	ggtccgcagcaagtttctgt  	66.9	55.0	20	3.0	6.0	5.0	6.0	185200.0                         	6124.0                 	5.4 	33.1
 chrY_Uty_P:  	attttttctgccttgtccaaa 	62.7	33.3	21	4.0	10.0	5.0	2.0	189400.0                         	6337.2                 	5.3 	33.5
