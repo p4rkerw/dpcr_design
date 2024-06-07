@@ -68,6 +68,22 @@ chrY_Uty_R:  	ggtccgcagcaagtttctgt  	66.9	55.0	20	3.0	6.0	5.0	6.0	185200.0      
 chrY_Uty_P:  	attttttctgccttgtccaaa 	62.7	33.3	21	4.0	10.0	5.0	2.0	189400.0                         	6337.2                 	5.3 	33.5
 ```
 
+Check NCBI primer blast for off-target amplification in mouse genome (with an amplicon size in the same range).
+```
+>NC_000086.8 Mus musculus strain C57BL/6J chromosome X, GRCm39
+product length = 86
+Features associated with this product:
+   lysine-specific demethylase 5c isoform 2
+
+   lysine-specific demethylase 5c isoform 9
+
+Forward primer  1          TGGCTACATCGCGAAAATCAG  21
+Template        151016640  .....................  151016660
+
+Reverse primer  1          CATCAGCTCCCAGCCTTACC  20
+Template        151016725  ....................  151016706
+```
+
 
 
 
