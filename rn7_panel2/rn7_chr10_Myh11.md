@@ -119,7 +119,7 @@ Below is the top primer / probe combination for our target region
 ```
 chr10_Myh11_F: GCCAAAGTGGCTCTGTCGTAA
 chr10_Myh11_R: TGTCCAAGAGCACTGGAGTTCA
-chr10_Myh11_P: TTTGACCCAATTTTC
+chr10_Myh11_P: TTTGACCCAATTTTCTG
 ```
 
 Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html . Self-dimers are less problematic if not predicted by Primer Express. 
@@ -137,7 +137,8 @@ chrYR 	aggtgataccaaaaaccaaaaggt	64.6	37.5	24	12.0	3.0	4.0	5.0	255500.0          
 chrYP 	agatttatgtgcctcagggt    	60.5	45.0	20	4.0	7.0	3.0	6.0	194200.0                         	6163.1                 	5.1 	31.7
 chr10F	gccaaagtggctctgtcgtaa   	66.7	52.4	21	5.0	5.0	5.0	6.0	202400.0                         	6446.3                 	4.9 	31.8
 chr10R	tgtccaagagcactggagttca  	67.5	50.0	22	6.0	5.0	5.0	6.0	216000.0                         	6759.5                 	4.6 	31.3
-chr10P	tttgacccaattttc         	49.5	33.3	15	3.0	7.0	4.0	1.0	134100.0                         	4493.0                 	7.5 	33.5
+chr10P	tttgacccaattttctg       	54.8	35.3	17	3.0	8.0	4.0	2.0	152200.0                         	5126.4                 	6.6 	33.7
+
 
 ```
 
