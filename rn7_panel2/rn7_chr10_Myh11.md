@@ -144,6 +144,18 @@ chr10P	tttgacccaattttctg       	54.8	35.3	17	3.0	8.0	4.0	2.0	152200.0           
 
 Check NCBI primer blast using target BLAT sequence and selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range)
 ```
-Specificity of primers: Primer pairs are specific to input template as no other targets were found in selected database: Refseq mRNA (Organism limited to Rattus norvegicus)
+>NC_086028.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 10, GRCr8
+
+product length = 77
+Features associated with this product:
+   myosin-11 isoform x1
+
+   myosin-11 isoform x4
+
+Forward primer  1        GCCAAAGTGGCTCTGTCGTAA  21
+Template        1283474  .....................  1283494
+
+Reverse primer  1        TGTCCAAGAGCACTGGAGTTCA  22
+Template        1283550  ......................  1283529
 ```
 
