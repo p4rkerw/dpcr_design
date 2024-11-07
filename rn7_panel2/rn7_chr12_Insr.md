@@ -117,9 +117,9 @@ Relax the primer length requirement if no ideal primers are found
 Below is the top primer / probe combination for our target region
 
 ```
-chr12_Insr_F: GCCAAAGTGGCTCTGTCGTAA
-chr12_Insr_R: TGTCCAAGAGCACTGGAGTTCA
-chr12_Insr_P: TTTGACCCAATTTTCTG
+chr12_Insr_F: GGAGACCGACAGCGATTTGA
+chr12_Insr_R: TCCCAAAGACCAGTGACACAGT
+chr12_Insr_P: CACTGCTTAGTGTTCCCA
 ```
 
 Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html . Self-dimers are less problematic if not predicted by Primer Express. 
@@ -138,15 +138,25 @@ chrYP 	agatttatgtgcctcagggt    	60.5	45.0	20	4.0	7.0	3.0	6.0	194200.0           
 chr10F	gccaaagtggctctgtcgtaa   	66.7	52.4	21	5.0	5.0	5.0	6.0	202400.0                         	6446.3                 	4.9 	31.8
 chr10R	tgtccaagagcactggagttca  	67.5	50.0	22	6.0	5.0	5.0	6.0	216000.0                         	6759.5                 	4.6 	31.3
 chr10P	tttgacccaattttctg       	54.8	35.3	17	3.0	8.0	4.0	2.0	152200.0                         	5126.4                 	6.6 	33.7
-chr12F	gccaaagtggctctgtcgtaa   	66.7	52.4	21	5.0	5.0	5.0	6.0	202400.0                         	6446.3                 	4.9 	31.8
-chr12R	tgtccaagagcactggagttca  	67.5	50.0	22	6.0	5.0	5.0	6.0	216000.0                         	6759.5                 	4.6 	31.3
-chr12P	tttgacccaattttctg       	54.8	35.3	17	3.0	8.0	4.0	2.0	152200.0                         	5126.4                 	6.6 	33.7
-
+chr12F	ggagaccgacagcgatttga    	67.9	55.0	20	6.0	3.0	4.0	7.0	203100.0                         	6191.1                 	4.9 	30.5
+chr12R	tcccaaagaccagtgacacagt  	66.2	50.0	22	8.0	3.0	7.0	4.0	217900.0                         	6697.4                 	4.6 	30.7
+chr12P	cactgcttagtgttccca      	57.8	50.0	18	3.0	6.0	6.0	3.0	162500.0                         	5425.6                 	6.2 	33.4
 
 ```
 
-Check NCBI primer blast using target BLAT sequence and selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range)
+Check NCBI primer blast using target BLAT sequence and selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range) ie "Genomes for selected eukaryotic organisms"
 ```
-Specificity of primers: Primer pairs are specific to input template as no other targets were found in selected database: Refseq mRNA (Organism limited to Rattus norvegicus)
+>NC_086030.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 12, GRCr8
+
+product length = 84
+Features flanking this product:
+   15074 bp at 5' side: rrna-5s ribosomal rna
+   1581 bp at 3' side: insulin receptor preproprotein
+
+Forward primer  1        GGAGACCGACAGCGATTTGA  20
+Template        5994273  ....................  5994292
+
+Reverse primer  1        TCCCAAAGACCAGTGACACAGT  22
+Template        5994356  ......................  5994335
 ```
 
