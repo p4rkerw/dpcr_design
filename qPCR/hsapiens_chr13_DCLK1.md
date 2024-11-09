@@ -38,15 +38,25 @@ The acceptable potentially unintended template should be only NM_001195416.2.
 ### Step 2.3 For shortest isoform NM_001195430.2
 - Pick primers using NM_001195430.2 as template. 
 - For Reverse Primer, set the range from 240 (just a little bit upstream of the third unique exon) so that the reverse primer lands on the third exon, which can be used to differentiate from other isoforms. 
-- Set $ of primers to return = 20
+- Set # of primers to return = 20
 - Primer melting temperatures should have a maximum at 62.0.
 - Use "No preference" for Exon junction span, as we have specified reverse primer range. If we require to span exon junctions, there will not be any primer pairs returned.
 - Keep other parameters same as Step 2.1
-
+### Step 2.4 For long/short isoform NM_004734.5+NM_001195415.2
+In this case, we would like to make a primer pair for both long and short isoforms to prove that the isoform-specific expression is true.
+- Pick primers using the short isoform **NM_001195415.2**. 
+- Note that it shares the same as long isoforms starting from exon 2 to 12. So the forward primer should be from 159, and reverse primer should be ending before 1276.
+- Set # of primers to return = 20
+- Primer melting temperature should be a maximum at 62.0. Tm difference should be within 1.
+- Use "No preference" for Exon junction span.
+- Keep other parameters the same as Step 2.1. It will ask you if you also want the other isoforms. Check the boxes.
+- Select primer pairs that is seperated by at least 1 introns or span across exons.
 ## Step 3. Get probe using primer pairs from Step 2
 This step will needs primer sets from Step 2.
 ### Step 3.1 For long isofrorm NM_004734.5
 From step 1 graphical view, put cursor on the transcript and we can download the fasta. Copy that sequence into IDT PrimerQuest Custom design. In "Set Design Parameters for..." options, use qPCR (2Primers + Probe). Fill in the forward and reverse primers from **Step 2.1**. Hit "Get Assays". Try several times to select a primer-probe set that meets the requirements.
+
+Take some time to review the oligos in OligoAnalyzer to check. Good primers should have low self-dimer and low hair-pin Tm.
 
 Now for NM_004734.5, we have:
 - Forward primer: 5'-GGCTGATTTGACCCGAACTC-3'
@@ -68,3 +78,11 @@ Now for NM_001195430.2, we have:
 - Forward primer: 5'-CGTTGGTATTCAGGTCCAACAC-3'
 - Reverse primer: 5'-TCCTACTGAATCCAAGTCATCCG-3'
 - probe: 5'-TAGTCAGCTCTCTACTCCGCGCTC-3'
+
+### Step 3.4 For long/short isoform NM_004734.5+NM_001195415.2
+From step 1 graphical view, pur cursor on transcript and download fasta for the transcript(exons). Follow the same steps as Step 3.1 to select best primer-probe sets.
+
+Now for long/short isoforms, we have:
+- Forward primer: 5'-CCCTGGAGAAGAAGTGTCGG-3'
+- Reverse primer: 5'-CATGTGCTCTTTGCCTCGAC-3'
+- Probe: 5'-TTGTAGCTGGAATCTGGAAGCCTTCC-3'
