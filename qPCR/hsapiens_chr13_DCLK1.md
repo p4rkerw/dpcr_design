@@ -54,7 +54,10 @@ In this case, we would like to make a primer pair for both long and short isofor
 ## Step 3. Get probe using primer pairs from Step 2
 This step will needs primer sets from Step 2.
 ### Step 3.1 For long isofrorm NM_004734.5
-From step 1 graphical view, put cursor on the transcript and we can download the fasta. Copy that sequence into IDT PrimerQuest Custom design. In "Set Design Parameters for..." options, use qPCR (2Primers + Probe). Fill in the forward and reverse primers from **Step 2.1**. Hit "Get Assays". Try several times to select a primer-probe set that meets the requirements.
+From step 1 graphical view, put cursor on the transcript and we can download the fasta. Copy that sequence into IDT PrimerQuest Custom design. In "Set Design Parameters for..." options, use qPCR (2Primers + Probe). Fill in the forward and reverse primers from **Step 2.1**.
+- For the probe, enter desired GC content to be 30%-80%. Length from 18-25 bp.
+
+Hit "Get Assays". Try several times to select a primer-probe set that meets the requirements.
 
 Take some time to review the oligos in OligoAnalyzer to check. Good primers should have low self-dimer and low hair-pin Tm.
 
@@ -171,7 +174,7 @@ From step 1 graphical view, pur cursor on transcript and download fasta for the 
 Now for long/short isoforms, we have:
 - Forward primer: 5'-CCCTGGAGAAGAAGTGTCGG-3'
 - Reverse primer: 5'-CATGTGCTCTTTGCCTCGAC-3'
-- Probe: 5'-TTGTAGCTGGAATCTGGAAGCCTTCC-3'
+- Probe: 5'-AGGAAGGCTTCCAGATTCCAGCT-3' (Cannot be FAM due to a G in the second position of the 5' end)
 
 From Primer-Blast, we can see that this isoform amplifies both long and short isoforms (not the shortest one). Some off-target effect can be found on MTHFR, but the amplicon length is 3962 and there are mismatches, which should not be an issue for us.
 ```
