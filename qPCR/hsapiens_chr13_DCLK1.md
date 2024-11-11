@@ -1,5 +1,5 @@
 qPCR primer and probe design for DCLK1.
-This is based on GRCh38.p14.
+All the alignments below (positions) is based on GRCh38.p14.
 # Introduction
 
 DCLK1 has several kinds of isoforms.
@@ -62,7 +62,44 @@ Now for NM_004734.5, we have:
 - Forward primer: 5'-GGCTGATTTGACCCGAACTC-3'
 - Reverse primer: 5'-GCCACATACATAACTCTCTCCTTC-3'
 - Probe: 5'-TGGGCTCAAGAAGATTTCCAGCCT-3'
-  
+
+Results from Primer blast is below. We can see that this primer pair covers all three RefSeq curated "long" form of DCLK1 transcripts.
+```
+Primer pair 1
+	Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	GGCTGATTTGACCCGAACTC	20	58.91	55.00	3.00	2.00
+Reverse primer	GCCACATACATAACTCTCTCCTTC	24	58.71	45.83	2.00	0.00
+Products on target templates
+>NM_001330071.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 5, mRNA
+
+
+product length = 133
+Forward primer  1    GGCTGATTTGACCCGAACTC  20
+Template        552  ....................  571
+
+Reverse primer  1    GCCACATACATAACTCTCTCCTTC  24
+Template        684  ........................  661
+
+>NM_001330072.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 6, mRNA
+
+
+product length = 133
+Forward primer  1    GGCTGATTTGACCCGAACTC  20
+Template        453  ....................  472
+
+Reverse primer  1    GCCACATACATAACTCTCTCCTTC  24
+Template        585  ........................  562
+
+>NM_004734.5 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 1, mRNA
+
+
+product length = 133
+Forward primer  1    GGCTGATTTGACCCGAACTC  20
+Template        552  ....................  571
+
+Reverse primer  1    GCCACATACATAACTCTCTCCTTC  24
+Template        684  ........................  661
+```
 ### Step 3.2 For short NM_001195415.2
 From step 1 graphical view, put cursor on the transcript and we can download the fasta for the transcript. Follow the same procedure as in Step 3.1 to select the best primer-probe sets.
 
@@ -70,6 +107,35 @@ Now for NM_001195415.2, we have:
 - Forward primer: 5'-GATTCCGCCGTTGGTATTCAG-3'
 - Reverse primer: 5'-GACGCAAGTGACGTAGAGGA-3'
 - Probe: 5'-TCTCTACTCCGCGCTCAGGCAA-3'
+
+Results from Primer Blast shows that this primer pair binds to both "short" isoforms in RefSeq curated database.
+```
+Primer pair 1
+	Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	GATTCCGCCGTTGGTATTCAG	21	59.40	52.38	4.00	1.00
+Reverse primer	GACGCAAGTGACGTAGAGGA	20	59.48	55.00	4.00	0.00
+Products on target templates
+>NM_001195415.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 2, mRNA
+
+
+product length = 195
+Forward primer  1   GATTCCGCCGTTGGTATTCAG  21
+Template        97  .....................  117
+
+Reverse primer  1    GACGCAAGTGACGTAGAGGA  20
+Template        291  ....................  272
+
+>NM_001195416.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 3, mRNA
+
+
+product length = 195
+Forward primer  1   GATTCCGCCGTTGGTATTCAG  21
+Template        97  .....................  117
+
+Reverse primer  1    GACGCAAGTGACGTAGAGGA  20
+Template        291  ....................  272
+
+```
 
 ### Step 3.3 For shortest isoform NM_001195430.2
 From step 1 graphical view, put cursor on the transcript and we can download the fasta for the transcript. Follow the same procedure as in Step 3.1 to select the best primer-probe sets.
@@ -79,6 +145,26 @@ Now for NM_001195430.2, we have:
 - Reverse primer: 5'-TCCTACTGAATCCAAGTCATCCG-3'
 - probe: 5'-TAGTCAGCTCTCTACTCCGCGCTC-3'
 
+Primer Blast results show that this pair only binds to transcript variant 4 of DCLK1
+```
+Primer pair 1
+	Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CGTTGGTATTCAGGTCCAACAC	22	59.52	50.00	5.00	1.00
+Reverse primer	TCCTACTGAATCCAAGTCATCCG	23	59.62	47.83	4.00	2.00
+Products on target templates
+>NM_001195430.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 4, mRNA
+
+
+product length = 194
+Forward primer  1    CGTTGGTATTCAGGTCCAACAC  22
+Template        105  ......................  126
+
+Reverse primer  1    TCCTACTGAATCCAAGTCATCCG  23
+Template        298  .......................  276
+
+
+```
+
 ### Step 3.4 For long/short isoform NM_004734.5+NM_001195415.2
 From step 1 graphical view, pur cursor on transcript and download fasta for the transcript(exons). Follow the same steps as Step 3.1 to select best primer-probe sets.
 
@@ -86,3 +172,93 @@ Now for long/short isoforms, we have:
 - Forward primer: 5'-CCCTGGAGAAGAAGTGTCGG-3'
 - Reverse primer: 5'-CATGTGCTCTTTGCCTCGAC-3'
 - Probe: 5'-TTGTAGCTGGAATCTGGAAGCCTTCC-3'
+
+From Primer-Blast, we can see that this isoform amplifies both long and short isoforms (not the shortest one). Some off-target effect can be found on MTHFR, but the amplicon length is 3962 and there are mismatches, which should not be an issue for us.
+```
+Primer pair 1
+	Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CCCTGGAGAAGAAGTGTCGG	20	59.75	60.00	3.00	1.00
+Reverse primer	CATGTGCTCTTTGCCTCGAC	20	59.55	55.00	4.00	2.00
+Products on target templates
+>NM_001195415.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 2, mRNA
+
+
+product length = 187
+Forward primer  1    CCCTGGAGAAGAAGTGTCGG  20
+Template        328  ....................  347
+
+Reverse primer  1    CATGTGCTCTTTGCCTCGAC  20
+Template        514  ....................  495
+
+>NM_001330071.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 5, mRNA
+
+
+product length = 187
+Forward primer  1     CCCTGGAGAAGAAGTGTCGG  20
+Template        1398  ....................  1417
+
+Reverse primer  1     CATGTGCTCTTTGCCTCGAC  20
+Template        1584  ....................  1565
+
+>NM_001330072.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 6, mRNA
+
+
+product length = 187
+Forward primer  1     CCCTGGAGAAGAAGTGTCGG  20
+Template        1299  ....................  1318
+
+Reverse primer  1     CATGTGCTCTTTGCCTCGAC  20
+Template        1485  ....................  1466
+
+>NM_001195416.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 3, mRNA
+
+
+product length = 187
+Forward primer  1    CCCTGGAGAAGAAGTGTCGG  20
+Template        328  ....................  347
+
+Reverse primer  1    CATGTGCTCTTTGCCTCGAC  20
+Template        514  ....................  495
+
+>NM_004734.5 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 1, mRNA
+
+
+product length = 187
+Forward primer  1     CCCTGGAGAAGAAGTGTCGG  20
+Template        1398  ....................  1417
+
+Reverse primer  1     CATGTGCTCTTTGCCTCGAC  20
+Template        1584  ....................  1565
+
+>NM_001410750.1 Homo sapiens methylenetetrahydrofolate reductase (MTHFR), transcript variant 3, mRNA
+
+
+product length = 3962
+Forward primer  1    CCCTGGAGAAGAAGTGTCGG  20
+Template        277  T..G........T.A.G...  296
+
+Forward primer  1     CCCTGGAGAAGAAGTGTCGG  20
+Template        4238  .T....T.C..C........  4219
+
+>NM_005957.5 Homo sapiens methylenetetrahydrofolate reductase (MTHFR), transcript variant 2, mRNA
+
+
+product length = 3962
+Forward primer  1    CCCTGGAGAAGAAGTGTCGG  20
+Template        224  T..G........T.A.G...  243
+
+Forward primer  1     CCCTGGAGAAGAAGTGTCGG  20
+Template        4185  .T....T.C..C........  4166
+
+>NM_001330358.2 Homo sapiens methylenetetrahydrofolate reductase (MTHFR), transcript variant 1, mRNA
+
+
+product length = 3962
+Forward primer  1    CCCTGGAGAAGAAGTGTCGG  20
+Template        280  T..G........T.A.G...  299
+
+Forward primer  1     CCCTGGAGAAGAAGTGTCGG  20
+Template        4241  .T....T.C..C........  4222
+
+```
+
