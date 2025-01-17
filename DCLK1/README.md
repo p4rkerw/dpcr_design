@@ -5,8 +5,9 @@
 - Long+Short isoform (all isoforms above execept NM_001195430.2)
 
 For human DCLK1 isoform primer sequences, please refer to "Multiplex" session to find a summary.
+
 For rat Dclk1 isoform primer sequences, please refer to "Final: Multiplexing" session to find a summary.
 
 Useful primers:
- -Human: DCLK1 L+S total and DCLK1 L total (spliced and unspliced)
- -Rat: Dclk1 L+S total and Dclk1 L total (spliced and unspliced)
+- Human: DCLK1 L+S total and DCLK1 L total (spliced and unspliced)
+- Rat: Dclk1 L+S total and Dclk1 L total (spliced and unspliced)
