@@ -18,11 +18,10 @@ Selected genes:
 # Human primers
 ## Receptors: TNSFRSF1A, IL1R1
 - TNFRSF1A:
-    - From this [paper](https://www.spandidos-publications.com/10.3892/ol.2024.14559?text=fulltext)
-    - Forward: 5'-ATTGGACTGGTCCCTCACCT-3'
-    - Reverse: 5'-CACTCCCTGCAGTCCGTATC-3'
-    - Primer Blast result:  <img src="image-4.png" alt="Primer Blast result" width="700"/>
-    - Product length: 170 bp
+    - From this [paper](https://www.sciencedirect.com/science/article/pii/S1476558618300113#ec0005)
+    - Forward: 5'-TGCCATGCAGGTTTCTTTCT-3'
+    - Reverse: 5'-CACAACTTCGTGCACTCCAG-3'
+    - Primer Blast result:  <img src="image-11.png" alt="Primer Blast result" width="700"/>
 - IL1R1
     - From origene [link](https://www.origene.com/catalog/gene-expression/qpcr-primer-pairs/hp200817-il1-receptor-i-il1r1-human-qpcr-primer-pair-nm-000877)
     - Forward: 5'-GTGCTTTGGTACAGGGATTCCTG-3'
@@ -83,7 +82,7 @@ IKK1 (CHUK) protein phosphorylates IkBa protein, and then IkBa is degraded by pr
 
 ## Apoptosis: TP53
 - TP53
-  - From this paper on p53 effects[link](https://pmc.ncbi.nlm.nih.gov/articles/PMC10735018/)
+  - From this paper on p53 effects [link](https://pmc.ncbi.nlm.nih.gov/articles/PMC10735018/)
   - Forward: 5'-GAGCTGAATGAGGCCTTGGA-3'
   - Reverse: 5'-CTGAGTCAGGCCCTTCTGTCTT-3'
   - Primer Blast result: <img src="image-10.png" alt="Primer Blast result" width="700"/>
