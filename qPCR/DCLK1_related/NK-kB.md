@@ -8,7 +8,7 @@ One paper on neuroblastoma cell line with cisplatin: [link](https://www.hamidiye
 
 Selected genes:
 - Receptors: TNFRSF1A, IL1R1
-- Cytokines: TNF(TNF-a), IL1B, IL10
+- Cytokines: TNF(TNF-a), IL1B, IL6, IL10
 - Transcription factors: MKI67
 - Structural genes: NFKB1
 - Inhibitors: IKK1
@@ -32,7 +32,7 @@ Selected genes:
 ## Cytokines: TNF, IL1B, IL6 and IL10
 - TNF: 
   - From [Origene](https://www.origene.com/catalog/gene-expression/qpcr-primer-pairs/hp200561-tnf-alpha-tnf-human-qpcr-primer-pair-nm-000594)
-  - Forward: 5'-CCCGAGTGACAAGCCTGTAG-3'
+  - Forward: 5'-CTCTTCTGCCTGCTGCACTTTG-3'
   - Reverse: 5'-ATGGGCTACAGGCTTGTCACTC-3'
   - Primer Blast result: <img src="image.png" alt="Primer Blast result" width="700"/>
   - Product length: 135 bp
@@ -49,10 +49,10 @@ Selected genes:
   - Primer Blast result: <img src="image-3.png" alt="Primer Blast result" width="700"/>
   - Product length: 101 bp
 - IL10:
-  - From this [paper](https://www.nature.com/articles/s41598-021-92941-2) table S1.
-  - Forward: 5'-TCATCGATTTCTTCCCTGTG-3'
-  - Reverse: 5'-ATGGCTTTGTAGATGCCTTT-3'
-  - Primer Blast result: <img src="image-2.png" alt="Primer Blast result" width="700"/>
+  - From this [paper](https://www.nature.com/articles/s41598-024-64097-2#Sec11). Sequence from Applied Biosystems.
+  - Forward: 5'-GAGAACAGCTGCACCCACTTC-3'
+  - Reverse: 5'-GGGCATCACCTCCTCCAGGTAA-3'
+  - Primer Blast result: <img src="image-12.png" alt="Primer Blast result" width="700"/>
   - Product length: 96 bp
 
 ## Transcription factors: MKI67
