@@ -1,4 +1,4 @@
-qPCR primer and probe design for DCLK1.
+qPCR primer and probe design for DCLK1. This document has been deprecated. 
 All the alignments below (positions) is based on GRCh38.p14.
 # Introduction
 
