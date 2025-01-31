@@ -2,7 +2,7 @@ This design is based on rat_chr1_RPP30.md.
 
 Using CHASM2, we found that the end of the long arm of chr1 may be prone to copy number alterations. Therefore, we targeted regions closer to the other end of chr1 with low CNA susceptibility.
 
-Our target region is chr1:55Mbp-60Mbp (1q12). In detail, it is chr1:54992234-59991527()
+Our target region is chr1:55Mbp-60Mbp (1q12). In detail, it is chr1:54992234-59991527.
 
 1. Examine the region using the UCSC Genome Browser. Note that RAGE24 data is based on **GRCr8**. Avoid SNVs as they can affect probe binding. Repetitive elements in the RepeatMasker track should also be avoided to prevent probes from binding to multiple genome regions. A good region is chr1:50,606,832-50,608,946 [link](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hub_4703362_GCA_036323735.1&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr1%3A50606832%2D50608946&hgsid=2444174923_PiJw9dIP3d4akm2qzaWVQbeBfj3A)
    
