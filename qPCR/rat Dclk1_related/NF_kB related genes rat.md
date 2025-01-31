@@ -3,8 +3,8 @@ This document is for qPCR primers of NF-kB related genes in rat.
 Date: 2025-01-27
 
 Selected genes:
-- Receptors: Tnfrsf1a, Il1R1 [link to section1]
-- Cytokines: TNF(TNF-a), Il1B, Il6, Il10
+- Receptors: Tnfrsf1a, Il1r1
+- Cytokines: Tnf(Tnf-a), Il1B, Il6, Il10
 - Transcription factors: Mki67
 - Structural genes: Nfkb1
 - Inhibitors: Ikk1 (Chuk)
