@@ -124,112 +124,63 @@ Our target region is chr1:55Mbp-60Mbp (1q12). In detail, it is chr1:54992234-599
     Relax the primer length requirement if no ideal primers are found
    
 5. Below is the top primer / probe combination for our target region (5'-3').
-- chr1_Ccr6_F: TCGCTGCAGGTAGGAATGG
-- chr1_Ccr6_R: TGAACTGCCCGCTTCACTT
-- chr1_Ccr6_P: TCTCTGAGTGGGCGGGA
+- chr1_Ccr6_F: TTGTACTGAGGCTCGCAGACAT
+- chr1_Ccr6_R: CATCTCAAGCCCCACATTCTTC
+- chr1_Ccr6_P: TGCAGCTTGTATTGCTT
 
 6. 
     Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
-    ```
-    Name  	Sequence              	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
-    chrXF 	ccagcagccaggacagtagaa 	67.0	57.1	21	8.0	1.0	6.0	6.0	215700.0                         	6458.3                 	4.6 	29.9
-    chrXR 	ctgaccaaacctggctggat  	66.7	55.0	20	5.0	4.0	6.0	5.0	186600.0                         	6102.0                 	5.4 	32.7
-    chrXP 	agtagtgtgaggaccaact   	54.0	47.4	19	6.0	4.0	3.0	6.0	194900.0                         	5876.9                 	5.1 	30.2
-    chr10F	gccaaagtggctctgtcgtaa 	66.7	52.4	21	5.0	5.0	5.0	6.0	202400.0                         	6446.3                 	4.9 	31.8
-    chr10R	tgtccaagagcactggagttca	67.5	50.0	22	6.0	5.0	5.0	6.0	216000.0                         	6759.5                 	4.6 	31.3
-    chr10P	tttgacccaattttctg     	54.8	35.3	17	3.0	8.0	4.0	2.0	152200.0                         	5126.4                 	6.6 	33.7
-    chr12F	ggagaccgacagcgatttga  	67.9	55.0	20	6.0	3.0	4.0	7.0	203100.0                         	6191.1                 	4.9 	30.5
-    chr12R	tcccaaagaccagtgacacagt	66.2	50.0	22	8.0	3.0	7.0	4.0	217900.0                         	6697.4                 	4.6 	30.7
-    chr12P	cactgcttagtgttccca    	57.8	50.0	18	3.0	6.0	6.0	3.0	162500.0                         	5425.6                 	6.2 	33.4
-    chr1F 	tcgctgcaggtaggaatgg   	66.7	57.9	19	4.0	4.0	3.0	8.0	187000.0                         	5908.9                 	5.3 	31.6
-    chr1R 	tgaactgcccgcttcactt   	66.3	52.6	19	3.0	6.0	7.0	3.0	164700.0                         	5714.8                 	6.1 	34.7
-    chr1P 	tctctgagtgggcggga     	66.5	64.7	17	2.0	4.0	3.0	8.0	162500.0                         	5282.5                 	6.2 	32.5
+   ```
+   Name  	Sequence              	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+   chrXF 	ccagcagccaggacagtagaa 	67.0	57.1	21	8.0	1.0	6.0	6.0	215700.0                         	6458.3                 	4.6 	29.9
+   chrXR 	ctgaccaaacctggctggat  	66.7	55.0	20	5.0	4.0	6.0	5.0	186600.0                         	6102.0                 	5.4 	32.7
+   chrXP 	agtagtgtgaggaccaact   	54.0	47.4	19	6.0	4.0	3.0	6.0	194900.0                         	5876.9                 	5.1 	30.2
+   chr10F	gccaaagtggctctgtcgtaa 	66.7	52.4	21	5.0	5.0	5.0	6.0	202400.0                         	6446.3                 	4.9 	31.8
+   chr10R	tgtccaagagcactggagttca	67.5	50.0	22	6.0	5.0	5.0	6.0	216000.0                         	6759.5                 	4.6 	31.3
+   chr10P	tttgacccaattttctg     	54.8	35.3	17	3.0	8.0	4.0	2.0	152200.0                         	5126.4                 	6.6 	33.7
+   chr12F	ggagaccgacagcgatttga  	67.9	55.0	20	6.0	3.0	4.0	7.0	203100.0                         	6191.1                 	4.9 	30.5
+   chr12R	tcccaaagaccagtgacacagt	66.2	50.0	22	8.0	3.0	7.0	4.0	217900.0                         	6697.4                 	4.6 	30.7
+   chr12P	cactgcttagtgttccca    	57.8	50.0	18	3.0	6.0	6.0	3.0	162500.0                         	5425.6                 	6.2 	33.4
+   chr1F 	ttgtactgaggctcgcagacat	66.4	50.0	22	5.0	6.0	5.0	6.0	209800.0                         	6750.4                 	4.8 	32.2
+   chr1R 	catctcaagccccacattcttc	67.1	50.0	22	5.0	6.0	10.0	1.0	194300.0                         	6550.3                 	5.1 	33.7
+   chr1P 	tgcagcttgtattgctt     	56.0	41.2	17	2.0	8.0	3.0	4.0	151800.0                         	5182.4                 	6.6 	34.1
+   ```
 
-    ```
-
-    ```
-                Self-Dimers:
+   ```
+                  Self-Dimers:
 
 
-               Cross Primer Dimers:
-    ```
+                  Cross Primer Dimers:
+
+   chrXR with chr1R
+   chrXR
+   5-catctcaagccccacattcttc->
+         || ||||     |  |  
+      <-taggtcggtccaaaccagtc-5
+   ```
 
 7. Check NCBI primer blast using the selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range). There might be an off-target but the length is too long for 15sec dPCR extension.
-```
-Primer pair 1
-	Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	TCGCTGCAGGTAGGAATGG	19	59.48	57.89	6.00	0.00
-Reverse primer	TGAACTGCCCGCTTCACTT	19	59.85	52.63	5.00	0.00
-Products on target templates
->NC_086019.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 1, GRCr8
+   ```
+      Primer pair 1
+         Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
+      Forward primer	TTGTACTGAGGCTCGCAGACAT	22	61.73	50.00	6.00	4.00
+      Reverse primer	CATCTCAAGCCCCACATTCTTC	22	59.31	50.00	3.00	0.00
+      Products on target templates
+      >NC_086019.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 1, GRCr8
 
 
-product length = 75
-Features flanking this product:
-   95 bp at 5' side: c-c chemokine receptor type 6
-   57877 bp at 3' side: centrosomal protein 43 isoform x3
+      product length = 75
+      Features associated with this product:
+         c-c chemokine receptor type 6 isoform x1
 
-Forward primer  1         TCGCTGCAGGTAGGAATGG  19
-Template        55024931  ...................  55024949
+         c-c chemokine receptor type 6 isoform x1
 
-Reverse primer  1         TGAACTGCCCGCTTCACTT  19
-Template        55025005  ...................  55024987
+      Forward primer  1         TTGTACTGAGGCTCGCAGACAT  22
+      Template        55024260  ......................  55024281
 
->NC_086023.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 5, GRCr8
-
-
-product length = 3047
-Features associated with this product:
-   calmodulin-binding transcription activator 1 isoform x2
-
-   calmodulin-binding transcription activator 1 isoform x6
-
-Forward primer  1          TCGCTGCAGGTAGGAATGG  19
-Template        167613052  CT.......T.......C.  167613070
-
-Forward primer  1          TCGCTGCAGGTAGGAATGG  19
-Template        167616098  CTA......T.........  167616080
-
->NC_086031.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 13, GRCr8
+      Reverse primer  1         CATCTCAAGCCCCACATTCTTC  22
+      Template        55024334  ......................  55024313
 
 
-product length = 3195
-Features flanking this product:
-   477 bp at 5' side: tata box-binding protein-associated factor rna polymerase...
-   4003 bp at 3' side: hhip-like protein 2
-
-Forward primer  1         TCGCTGCAGGTAGGAATGG  19
-Template        97582337  A.T.CA.............  97582319
-
-Reverse primer  1         TGAACTGCCCGCTTCACTT  19
-Template        97579143  .CCT.....A.........  97579161
-
->NC_086038.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 20, GRCr8
-
-
-product length = 2016
-Features associated with this product:
-   sex comb on midleg-like protein 4
-
-Forward primer  1         TCGCTGCAGGTAGGAATGG  19
-Template        47995284  .....A..A.A........  47995302
-
-Reverse primer  1         TGAACTGCCCGCTTCACTT  19
-Template        47997299  GCTC......T........  47997281
-
->NC_086040.1 Rattus norvegicus strain BN/NHsdMcwi chromosome Y, GRCr8
-
-
-product length = 786
-Features flanking this product:
-   357341 bp at 5' side: y-linked testis-specific protein 1-like
-   2381472 bp at 3' side: glutaredoxin-1-like
-
-Forward primer  1        TCGCTGCAGGTAGGAATGG  19
-Template        9285671  .GTG.........A.....  9285653
-
-Reverse primer  1        TGAACTGCCCGCTTCACTT  19
-Template        9284886  CTCT.....A.........  9284904
-
-```
+   ```
    
