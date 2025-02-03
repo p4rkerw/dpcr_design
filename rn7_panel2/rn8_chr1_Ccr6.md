@@ -124,9 +124,9 @@ Our target region is chr1:55Mbp-60Mbp (1q12). In detail, it is chr1:54992234-599
     Relax the primer length requirement if no ideal primers are found
    
 5. Below is the top primer / probe combination for our target region (5'-3').
-- chr1_Ccr6_F: TTGTACTGAGGCTCGCAGACAT
-- chr1_Ccr6_R: CATCTCAAGCCCCACATTCTTC
-- chr1_Ccr6_P: TGCAGCTTGTATTGCTT
+- chr1_Ccr6_F: TCATGGACCTGGCTTTCTTGT
+- chr1_Ccr6_R: TCGTGCCAATCGCCTACTC
+- chr1_Ccr6_P: CCAAAGACACAGATTAA
 
 6. 
     Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
@@ -141,46 +141,70 @@ Our target region is chr1:55Mbp-60Mbp (1q12). In detail, it is chr1:54992234-599
    chr12F	ggagaccgacagcgatttga  	67.9	55.0	20	6.0	3.0	4.0	7.0	203100.0                         	6191.1                 	4.9 	30.5
    chr12R	tcccaaagaccagtgacacagt	66.2	50.0	22	8.0	3.0	7.0	4.0	217900.0                         	6697.4                 	4.6 	30.7
    chr12P	cactgcttagtgttccca    	57.8	50.0	18	3.0	6.0	6.0	3.0	162500.0                         	5425.6                 	6.2 	33.4
-   chr1F 	ttgtactgaggctcgcagacat	66.4	50.0	22	5.0	6.0	5.0	6.0	209800.0                         	6750.4                 	4.8 	32.2
-   chr1R 	catctcaagccccacattcttc	67.1	50.0	22	5.0	6.0	10.0	1.0	194300.0                         	6550.3                 	5.1 	33.7
-   chr1P 	tgcagcttgtattgctt     	56.0	41.2	17	2.0	8.0	3.0	4.0	151800.0                         	5182.4                 	6.6 	34.1
+   chr1F 	tcatggacctggctttcttgt 	66.1	47.6	21	2.0	9.0	5.0	5.0	185000.0                         	6394.2                 	5.4 	34.6
+   chr1R 	tcgtgccaatcgcctactc   	66.7	57.9	19	3.0	5.0	8.0	3.0	167100.0                         	5699.7                 	6.0 	34.1
+   chr1P 	ccaaagacacagattaa     	49.0	35.3	17	9.0	2.0	4.0	2.0	180400.0                         	5180.5                 	5.5 	28.7
    ```
 
    ```
-                  Self-Dimers:
+                Self-Dimers:
 
 
-                  Cross Primer Dimers:
+               Cross Primer Dimers:
 
-   chrXR with chr1R
-   chrXR
-   5-catctcaagccccacattcttc->
-         || ||||     |  |  
-      <-taggtcggtccaaaccagtc-5
    ```
 
 7. Check NCBI primer blast using the selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range). There might be an off-target but the length is too long for 15sec dPCR extension.
    ```
-      Primer pair 1
-         Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
-      Forward primer	TTGTACTGAGGCTCGCAGACAT	22	61.73	50.00	6.00	4.00
-      Reverse primer	CATCTCAAGCCCCACATTCTTC	22	59.31	50.00	3.00	0.00
-      Products on target templates
-      >NC_086019.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 1, GRCr8
+   Primer pair 1
+      Sequence (5'->3')	Length	Tm	GC%	Self complementarity	Self 3' complementarity
+   Forward primer	TCATGGACCTGGCTTTCTTGT	21	59.57	47.62	4.00	0.00
+   Reverse primer	TCGTGCCAATCGCCTACTC	19	59.86	57.89	3.00	0.00
+   Products on target templates
+   >NC_086019.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 1, GRCr8
 
 
-      product length = 75
-      Features associated with this product:
-         c-c chemokine receptor type 6 isoform x1
+   product length = 99
+   Features associated with this product:
+      c-c chemokine receptor type 6 isoform x1
 
-         c-c chemokine receptor type 6 isoform x1
+      c-c chemokine receptor type 6 isoform x1
 
-      Forward primer  1         TTGTACTGAGGCTCGCAGACAT  22
-      Template        55024260  ......................  55024281
+   Forward primer  1         TCATGGACCTGGCTTTCTTGT  21
+   Template        55024624  .....................  55024644
 
-      Reverse primer  1         CATCTCAAGCCCCACATTCTTC  22
-      Template        55024334  ......................  55024313
+   Reverse primer  1         TCGTGCCAATCGCCTACTC  19
+   Template        55024722  ...................  55024704
 
+   >NC_086031.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 13, GRCr8
+
+
+   product length = 3208
+   Features associated with this product:
+      proton-transporting v-type atpase complex assembly regula...
+
+      proton-transporting v-type atpase complex assembly regula...
+
+   Forward primer  1         TCATGGACCTGGCTTTCTTGT  21
+   Template        50026141  C.C...T......C.......  50026161
+
+   Forward primer  1         TCATGGACCTGGCTTTCTTGT  21
+   Template        50029348  C..GT.......T.......A  50029328
+
+   >NC_086033.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 15, GRCr8
+
+
+   product length = 1904
+   Features associated with this product:
+      disks large-associated protein 5
+
+      disks large-associated protein 5 isoform x1
+
+   Forward primer  1         TCATGGACCTGGCTTTCTTGT  21
+   Template        23137295  ..T..TGA.............  23137315
+
+   Forward primer  1         TCATGGACCTGGCTTTCTTGT  21
+   Template        23139198  .GCC.C...C...........  23139178
 
    ```
    
