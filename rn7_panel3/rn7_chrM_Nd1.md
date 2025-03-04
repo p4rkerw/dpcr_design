@@ -5,7 +5,8 @@ Our target region is rn7 Nd1 gene chrM:2,740-3,694
 1. Examine the region using the UCSC Genome Browser. Note that RAGE24 data is based on **rn7**. Avoid SNVs as they can affect probe binding. Repetitive elements in the RepeatMasker track should also be avoided to prevent probes from binding to multiple genome regions. 
    
 2. We can extract the nucleotide sequence of chrM:2,740-3,694 by clicking "View"-->"DNA" in the UCSC Genome Browser. 
-    ```
+
+```
 >rn7_dna range=chrM:2740-3694 5'pad=0 3'pad=0 strand=+ repeatMasking=N
 GTGTACTTTATTAATATCCTAACACTCCTAATCCCAATCTTAATTGCCAT
 GGCCTTCCTCACCCTAGTAGAACGGAAAATCCTAGGCTACATACAACTAC
@@ -27,10 +28,11 @@ CACAACTTTCCTATGAATCCGAGCATCCTACCCCCGTTTTCGATATGACC
 AACTAATGCACCTCCTATGAAAAAATTTCCTCCCACTAACACTAGCATTC
 TGCATATGATACATTTCCCTGCCAATTTTCCTAGCAGGAATTCCACCCTA
 CACAT
-    ```
+```
 
 3. We will now check this sequence with BLAT to ensure that it's specific to our target region. Note how it has a very high score for the entire length of the sequence on the target chromosome. 
-    ```
+
+```
    ACTIONS                 QUERY   SCORE START   END QSIZE IDENTITY  CHROM  STRAND  START       END   SPAN
 ------------------------------------------------------------------------------------------------------------
 browser new tab details YourSeq   955     1   955   955   100.0%  chrM   +        2740      3694    955
@@ -44,12 +46,12 @@ browser new tab details YourSeq    20   150   169   955   100.0%  chr12  -    39
 browser new tab details YourSeq    20   165   184   955   100.0%  chr11  -    20482848  20482867     20
 browser new tab details YourSeq    20   893   912   955   100.0%  chr1   -     8661609   8661628     20
 browser new tab details YourSeq    20   474   493   955   100.0%  chr18  +    78389454  78389473     20
-    ```
+```
 
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Start with the following parameters:
 
-    ```
-   Min Primer Tm	58
+```
+Min Primer Tm	58
 Max Primer Tm	60
 Max Difference in Tm of Two Primers	2
 Primer GC Content	
@@ -94,16 +96,17 @@ Min Amplified Region Tm	0
 Max Amplified Region Tm	85
 Min Amplified Region Length	50
 Max Amplified Region Length	150
-    ```
+```
 
 Relax the primer length requirement if no ideal primers are found
    
 5. Below is the top primer / probe combination for our target region (5'-3').
-rn7_chrM_Nd1_F  AACGGAAAATCCTAGGCTACATACA
-rn7_chrM_Nd1_R  CCATATGGGCCTACGATGTTG
-rn7_chrM_Nd1_P  CTACGCAAAGGCC
+   
+- rn7_chrM_Nd1_F  AACGGAAAATCCTAGGCTACATACA
+- rn7_chrM_Nd1_R  CCATATGGGCCTACGATGTTG
+- rn7_chrM_Nd1_P  CTACGCAAAGGCC
 
-6. 
+7. 
     Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
    
 ```
@@ -130,18 +133,15 @@ chrM_Nd1F
 5-aacggaaaatcctaggctacataca->
        || ||| |||||       
     <-gttgtagcatccgggtatac-5
-
-
-   ```
+```
 
 7. Check NCBI primer blast using the selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range). If there is an off-target make sure that the amplicon length is too long for 15sec dPCR extension.
-   ```
+
+```
    Primer pair 1
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
 Forward primer	AACGGAAAATCCTAGGCTACATACA	Plus	25	71	95	59.87	40.00	6.00	0.00
-Reverse primer	CATATGGGCCTACGATGTTG	Minus	20	130	111	56.07	50.00	6.00	2.00
-
-  
-   ```
+Reverse primer	CATATGGGCCTACGATGTTG	Minus	20	130	111	56.07	50.00	6.00	2.00 
+```
    
 
