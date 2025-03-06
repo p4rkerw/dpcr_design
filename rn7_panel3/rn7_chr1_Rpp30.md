@@ -1,8 +1,8 @@
-dpcr primer and probe design for rat rpp30 on chr1
+dpcr primer and probe design for rat rpp30 on chr1. This is a single copy reference gene.
 
 1. First examine the gene using the ucsc genome browser [link](http://www.genome.ucsc.edu/cgi-bin/hgTracks?db=rn7&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr1%3A233786112%2D233808954&hgsid=1672249230_IGwmcTsrcqJa5aejTsTa8dxaRAad). SNVs can affect probe binding and should be avoided if possible. There are also repetitive elements in the repeat masker track. It is difficult to design probes that involve repetitive elements because there is a risk they will bind multiple regions in the genome with the same element.
 
-2. We will now extract the nucleotide sequence using the table browser [link](). We will mask repeats with N. 
+2. We will now extract the nucleotide sequence using View -> DNA and mask repeats with N. 
 
 ```
 >rn7_gold_chr1.13 range=chr1:233808220-233808954 5'pad=0 3'pad=0 strand=+ repeatMasking=N
@@ -37,7 +37,7 @@ browser details YourSeq    21   112   132   735   100.0%  chr14  -    57160957  
 browser details YourSeq    20   512   531   735   100.0%  chr10  +    50546103  50546122     20
 ```
 
-4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region
+4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Below is the top primer / probe combination for our target region. Primer express predicts a forward primer self dimer and F+R and F+P cross dimers.  
 
 - Forward Primer:GAAGAAGCCCCGGTCATCA 
 - Reverse Primer:GCTTTCTTGCACGCTGGAA 
