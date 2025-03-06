@@ -1,49 +1,55 @@
-Our target region is rn7 Nd2 gene chrM:3,904-4,942
+Our target region is rn7 Nd2 gene chrM:3,904-4,942. This region is reflective of total mitochondrial copy number because it is not affected by the common deletion.
 
 1. Examine the region using the UCSC Genome Browser. Avoid SNVs as they can affect probe binding. Repetitive elements in the RepeatMasker track should also be avoided to prevent probes from binding to multiple genome regions. 
    
 2. We can extract the nucleotide sequence by clicking "View"-->"DNA" in the UCSC Genome Browser. 
 
 ```
->rn7_dna range=chrM:2740-3694 5'pad=0 3'pad=0 strand=+ repeatMasking=N
-GTGTACTTTATTAATATCCTAACACTCCTAATCCCAATCTTAATTGCCAT
-GGCCTTCCTCACCCTAGTAGAACGGAAAATCCTAGGCTACATACAACTAC
-GCAAAGGCCCCAACATCGTAGGCCCATATGGTATTCTACAACCATTTGCA
-GATGCCATAAAACTATTCATAAAAGAACCCATACGCCCCCTAACCACCTC
-AATATCACTATTTATTATCGCCCCAACCCTCTCCCTTACACTAGCTCTAA
-GCCTATGAATCCCCTTACCAATACCTCACCCCCTTATCAACCTCAACCTA
-GGCATACTATTTATTCTAGCCACATCAAGTCTTTCAGTCTACTCCATTCT
-ATGATCAGGATGAGCATCAAATTCAAAATACTCCCTATTCGGAGCCCTAC
-GAGCCGTTGCCCAAACCATCTCTTACGAAGTCACAATAGCCATTATCCTC
-TTATCCGTCCTCCTAATAAGCGGCTCCTTCTCCCTACAAATACTTATCAC
-TACACAAGAACATATCTGACTATTAATCCCCGCCTGACCAATAGCCATAA
-TATGATACATTTCAACCCTAGCAGAAACAAATCGAGCTCCCTTCGACTTA
-ACAGAAGGAGAATCAGAATTAGTCTCAGGCTTTAACGTCGAATACGCCGC
-AGGACCATTCGCCCTATTCTTCATAGCCGAGTACACCAATATTATCCTAA
-TAAACGCCCTAACATCAATTGTATTCCTAGGCCCCTTATATCACATCAAT
-TACCCTGAATTATACTCAACCAGCTTCATAACAGAAACACTACTTCTATC
-CACAACTTTCCTATGAATCCGAGCATCCTACCCCCGTTTTCGATATGACC
-AACTAATGCACCTCCTATGAAAAAATTTCCTCCCACTAACACTAGCATTC
-TGCATATGATACATTTCCCTGCCAATTTTCCTAGCAGGAATTCCACCCTA
-CACAT
+>rn7_dna range=chrM:3904-4942 5'pad=0 3'pad=0 strand=+ repeatMasking=N
+ATAAACCCAATCACCCTAATCATTATTTACTTTACTATCCTCATAGGGCC
+TGTAATCACTATATCTAGCTCCAACTTACTCCTAATATGAGTAGGATTGG
+AAATAAGCCTTTTAGCTATCATCCCACTTCTAGCCAACAAAAAAAGCCCA
+CGATCAACTGAAGCAGCAACAAAATATTTTCTAACCCAAGCTACAGCCTC
+AATAATTATCCTACTAGTCATCATCCTCAACTACAAACAATCAGGAATAT
+GAACCCTCCAACAACAAACCAATAACATACTACTCAACATAATACTCATT
+TCACTAGCCATAAAACTTGGACTAGCCCCCTTCCACTACTGACTACCCGA
+AGTCACCCAAGGAATTCCCCTACACATTGGATTAATCTTACTAACATGAC
+AAAAAATTGCTCCACTATCAATTCTATACCAATTTTATCAACTCCTAAAC
+CCAACTATCACCACCATTCTCGCAATTTCATCAGTCTTTGTTGGCGCCTG
+AGGAGGACTTAACCAGACCCAAACACGAAAAATCATAGCATATTCATCAA
+TTGCCCACATAGGATGAATAACAGCAATCCTTCCATACAACCCTAACTTA
+ACCCTCCTAAACTTAACAATTTACATCCTACTTACTGTTCCAATATTCAT
+CACACTCATAACAAACTCAGCAACAACAATCAACACACTCTCACTCGCAT
+GAAATAAAACTCCCATAATCCTAACCATAACATCCATCATCCTCCTATCA
+CTAGGAGGACTCCCCCCTCTCACAGGATTTTTACCAAAATGAGCAATTAT
+CTCCGAGCTTCTAAAAAACAACTGCTCAACCCTATCAACACTAATAGCTA
+TCATAGCCCTATTAAGCCTATTCTTCTATACACGACTAATTTACTCTATA
+TCCCTCACCATATTCCCAACCAACAACAACTCCAAAATAATCTCCCACCA
+CCACCAAAACCCAAAACATAATTTTATCCTCCCAACCCTCACAGTATTAA
+GTACCCTTACCCTACCGCTTTCCTCCCAACTAATCACAT
 ```
 
-3. We will now check this sequence with BLAT to ensure that it's specific to our target region. Note how it has a very high score for the entire length of the sequence on the target chromosome. 
+3. We will now check this sequence with BLAT to ensure that it's specific to our target region. 
 
 ```
    ACTIONS                 QUERY   SCORE START   END QSIZE IDENTITY  CHROM  STRAND  START       END   SPAN
 ------------------------------------------------------------------------------------------------------------
-browser new tab details YourSeq   955     1   955   955   100.0%  chrM   +        2740      3694    955
-browser new tab details YourSeq    99   611   711   955    99.1%  chr2   +   107518868 107518968    101
-browser new tab details YourSeq    62    80   379   955    88.8%  chr5   +    63331786  63332096    311
-browser new tab details YourSeq    37   139   181   955    93.1%  chr3   +   163233250 163233292     43
-browser new tab details YourSeq    23   332   354   955   100.0%  chr2   +   152322504 152322526     23
-browser new tab details YourSeq    22   299   321   955   100.0%  chr16  +    32173165  32173191     27
-browser new tab details YourSeq    21   154   176   955    95.7%  chr18  +    67296859  67296881     23
-browser new tab details YourSeq    20   150   169   955   100.0%  chr12  -    39739238  39739257     20
-browser new tab details YourSeq    20   165   184   955   100.0%  chr11  -    20482848  20482867     20
-browser new tab details YourSeq    20   893   912   955   100.0%  chr1   -     8661609   8661628     20
-browser new tab details YourSeq    20   474   493   955   100.0%  chr18  +    78389454  78389473     20
+browser new tab details rn7_dna  1039     1  1039  1039   100.0%  chrM   +        3904      4942   1039
+browser new tab details rn7_dna    29   933   962  1039   100.0%  chr10  -    19424321  19424508    188
+browser new tab details rn7_dna    27   711   742  1039    93.6%  chr11  +    37933033  37933371    339
+browser new tab details rn7_dna    24   655   680  1039    96.2%  chr19  -    49746421  49746446     26
+browser new tab details rn7_dna    24   945   968  1039   100.0%  chr9   +   110966933 110966956     24
+browser new tab details rn7_dna    24   702   728  1039    96.3%  chr11  +    54664870  54664912     43
+browser new tab details rn7_dna    24   945   969  1039   100.0%  chr1   +    66089662  66089687     26
+browser new tab details rn7_dna    22   159   180  1039   100.0%  chr10  +    29648102  29648123     22
+browser new tab details rn7_dna    21   945   965  1039   100.0%  chr13  -    55022750  55022770     21
+browser new tab details rn7_dna    21   159   180  1039   100.0%  chr12  -     7062989   7063011     23
+browser new tab details rn7_dna    21   389   409  1039   100.0%  chr11  -    68932931  68932951     21
+browser new tab details rn7_dna    21   281   303  1039    95.7%  chr11  -    64472881  64472903     23
+browser new tab details rn7_dna    21   159   180  1039   100.0%  chr11  -    62683065  62683087     23
+browser new tab details rn7_dna    21   159   181  1039    95.7%  chr11  -    26979255  26979277     23
+browser new tab details rn7_dna    21   159   180  1039   100.0%  chr1   -   202582589 202582611     23
+browser new tab details rn7_dna    21   946   966  1039   100.0%  chr10  +    86408180  86408200     21
 ```
 
 4. We will now use this sequence to design primers and probes in primer express using a TaqMan MGB quantification design. Start with the following parameters:
