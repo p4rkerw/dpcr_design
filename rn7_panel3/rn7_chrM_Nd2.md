@@ -29,7 +29,7 @@ CCACCAAAACCCAAAACATAATTTTATCCTCCCAACCCTCACAGTATTAA
 GTACCCTTACCCTACCGCTTTCCTCCCAACTAATCACAT
 ```
 
-3. We will now check this sequence with BLAT to ensure that it's specific to our target region. 
+3. We will now check this sequence with BLAT to ensure that it's specific to our target region. Note how it has a very high score for the entire length of the sequence on the target chromosome. 
 
 ```
    ACTIONS                 QUERY   SCORE START   END QSIZE IDENTITY  CHROM  STRAND  START       END   SPAN
@@ -104,14 +104,13 @@ Max Amplified Region Length	150
 
 Relax the primer length requirement if no ideal primers are found
    
-5. Below is the top primer / probe combination for our target region (5'-3').
+5. Below is the top primer / probe combination for our target region (5'-3') that does not have an off-target amplicon (maximum size 500bp) in ncbi primer blast using GRCr8. 
    
-- rn7_chrM_Nd1_F  AACGGAAAATCCTAGGCTACATACA
-- rn7_chrM_Nd1_R  CCATATGGGCCTACGATGTTG
-- rn7_chrM_Nd1_P  CTACGCAAAGGCC
+- rn7_chrM_Nd2_F  TCTCGCAATTTCATCAGTCTTTG
+- rn7_chrM_Nd2_R  TTTTCGTGTTTGGGTCTGGTT
+- rn7_chrM_Nd2_P  TGGCGCCTGAGGAG
 
-7. 
-    Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
+6. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
    
 ```
 Name     	Sequence                 	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
@@ -142,10 +141,49 @@ chrM_Nd1F
 7. Check NCBI primer blast using the selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range). If there is an off-target make sure that the amplicon length is too long for 15sec dPCR extension.
 
 ```
-   Primer pair 1
-Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	AACGGAAAATCCTAGGCTACATACA	Plus	25	71	95	59.87	40.00	6.00	0.00
-Reverse primer	CATATGGGCCTACGATGTTG	Minus	20	130	111	56.07	50.00	6.00	2.00 
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	TCTCGCAATTTCATCAGTCTTTG	Plus	23	468	490	57.71	39.13	4.00	1.00
+Reverse primer	TTTTCGTGTTTGGGTCTGGTT	Minus	21	531	511	58.55	42.86	2.00	0.00
+Product length	64
+Products on potentially unintended templates
+>NC_086039.1 Rattus norvegicus strain BN/NHsdMcwi chromosome X, GRCr8
+
+product length = 2444
+Features associated with this product:
+   ferm and pdz domain-containing protein 4 isoform x3
+
+   ferm and pdz domain-containing protein 4 isoform x6
+
+Reverse primer  1         TTTTCGTGTTTGGGTCTGGTT  21
+Template        29854598  ....T.A........T.T...  29854578
+
+Reverse primer  1         TTTTCGTGTTTGGGTCTGGTT  21
+Template        29852155  ..G..C.T..........A..  29852175
+
+
+product length = 1369
+Features flanking this product:
+   29856 bp at 5' side: calpain-6
+   8444 bp at 3' side: neuronal migration protein doublecortin isoform x1
+
+Forward primer  1          TCTCGCAATTTCATCAGTCTTTG  23
+Template        112226673  ...GAA..C...........C..  112226651
+
+Reverse primer  1          TTTTCGTGTTTGGGTCTGGTT  21
+Template        112225305  .C...A.........T..T..  112225325
+
+>NC_086034.1 Rattus norvegicus strain BN/NHsdMcwi chromosome 16, GRCr8
+
+product length = 1471
+Features flanking this product:
+   4511689 bp at 5' side: n(4)-(beta-n-acetylglucosaminyl)-l-asparaginase precursor
+   498263 bp at 3' side: teneurin-3 isoform x5
+
+Forward primer  1         TCTCGCAATTTCATCAGTCTTTG  23
+Template        49761104  .A..C........AA.....A..  49761126
+
+Reverse primer  1         TTTTCGTGTTTGGGTCTGGTT  21
+Template        49762574  ...G.T.A....T........  49762554
 ```
    
 
