@@ -1,5 +1,3 @@
-This design is based on rat_chr1_RPP30.md.
-
 Our target region is rn7 Nd2 gene chrM:3,904-4,942
 
 1. Examine the region using the UCSC Genome Browser. Avoid SNVs as they can affect probe binding. Repetitive elements in the RepeatMasker track should also be avoided to prevent probes from binding to multiple genome regions. 
