@@ -113,29 +113,45 @@ Relax the primer length requirement if no ideal primers are found
 6. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
    
 ```
-Name     	Sequence                 	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
-chr1F    	tcatggacctggctttcttgt    	66.1	47.6	21	2.0	9.0	5.0	5.0	185000.0                         	6394.2                 	5.4 	34.6
-chr1R    	tcgtgccaatcgcctactc      	66.7	57.9	19	3.0	5.0	8.0	3.0	167100.0                         	5699.7                 	6.0 	34.1
-chr1P    	ccaaagacacagattaa        	49.0	35.3	17	9.0	2.0	4.0	2.0	180400.0                         	5180.5                 	5.5 	28.7
-chrM_Nd1F	aacggaaaatcctaggctacataca	64.7	40.0	25	11.0	4.0	6.0	4.0	257800.0                         	7652.1                 	3.9 	29.7
-chrM_Nd1R	catatgggcctacgatgttg     	63.1	50.0	20	4.0	6.0	4.0	6.0	191700.0                         	6148.1                 	5.2 	32.1
-chrM_Nd1P	ctacgcaaaggcc            	51.4	61.5	13	4.0	1.0	5.0	3.0	123200.0                         	3928.6                 	8.1 	31.9
+Name            	Sequence                 	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+rn7-chr1-Rpp30-F	tcatggacctggctttcttgt    	66.1	47.6	21	2.0	9.0	5.0	5.0	185000.0                         	6394.2                 	5.4 	34.6
+rn7-chr1-Rpp30-R	tcgtgccaatcgcctactc      	66.7	57.9	19	3.0	5.0	8.0	3.0	167100.0                         	5699.7                 	6.0 	34.1
+rn7-chr1-Rpp30-P	ccaaagacacagattaa        	49.0	35.3	17	9.0	2.0	4.0	2.0	180400.0                         	5180.5                 	5.5 	28.7
+rn7-chrM-Nd1-F  	aacggaaaatcctaggctacataca	64.7	40.0	25	11.0	4.0	6.0	4.0	257800.0                         	7652.1                 	3.9 	29.7
+rn7-chrM-Nd1-R  	catatgggcctacgatgttg     	63.1	50.0	20	4.0	6.0	4.0	6.0	191700.0                         	6148.1                 	5.2 	32.1
+rn7-chrM-Nd1-P  	ctacgcaaaggcc            	51.4	61.5	13	4.0	1.0	5.0	3.0	123200.0                         	3928.6                 	8.1 	31.9
+rn7-chrM-Nd2-F  	tctcgcaatttcatcagtctttg  	65.5	39.1	23	4.0	10.0	6.0	3.0	207500.0                         	6955.6                 	4.8 	33.5
+rn7-chrM-Nd2-R  	ttttcgtgtttgggtctggtt    	65.7	42.9	21	0.0	12.0	2.0	7.0	185900.0                         	6471.3                 	5.4 	34.8
+rn7-chrM-Nd2-P  	tggcgcctgaggag           	61.6	71.4	14	2.0	2.0	3.0	7.0	133900.0                         	4344.9                 	7.5 	32.4
+
 
 
 ```
 
-Note that there are no primer options without a cross primer dimer for Nd1
+Note that these primers result in predicted cross primer dimers. 
 ```
                 Self-Dimers:
 
 
                Cross Primer Dimers:
 
-chrM_Nd1F with chrM_Nd1R
-chrM_Nd1F
+rn7-chrM-Nd1-F with rn7-chrM-Nd1-R
+rn7-chrM-Nd1-F
 5-aacggaaaatcctaggctacataca->
        || ||| |||||       
     <-gttgtagcatccgggtatac-5
+
+rn7-chrM-Nd1-P with rn7-chrM-Nd2-F
+rn7-chrM-Nd1-P
+5-tctcgcaatttcatcagtctttg->
+                  | |||||
+               <-ccggaaacgcatc-5
+
+rn7-chrM-Nd2-F with rn7-chrM-Nd2-P
+rn7-chrM-Nd2-F
+5-tctcgcaatttcatcagtctttg->
+            || |||| |    
+         <-gaggagtccgcggt-5
 ```
 
 7. Check NCBI primer blast using the selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range). If there is an off-target make sure that the amplicon length is too long for 15sec dPCR extension.
