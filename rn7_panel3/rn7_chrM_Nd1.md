@@ -106,8 +106,9 @@ Relax the primer length requirement if no ideal primers are found
 - rn7_chrM_Nd1_R  CCATATGGGCCTACGATGTTG
 - rn7_chrM_Nd1_P  CTACGCAAAGGCC
 
-7. 
-    Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
+Note that this primer / probe combination has a predicted self dimer for the forward primer and two predicted cross dimers between the forward + reverse and forward + probe. For this region, there does not appear to be any primers and probes without predicted dimers. 
+
+6. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
    
 ```
 Name     	Sequence                 	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
@@ -121,7 +122,7 @@ chrM_Nd1P	ctacgcaaaggcc            	51.4	61.5	13	4.0	1.0	5.0	3.0	123200.0       
 
 ```
 
-Note that there are no primer options without a cross primer dimer for Nd1
+Note that there are no primer options without a cross primer dimer for Nd1. The multiplex tool also predicts a F + R dimer for the Nd1 primer set.
 ```
                 Self-Dimers:
 
@@ -135,7 +136,7 @@ chrM_Nd1F
     <-gttgtagcatccgggtatac-5
 ```
 
-7. Check NCBI primer blast using the selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range). If there is an off-target make sure that the amplicon length is too long for 15sec dPCR extension.
+7. Check NCBI primer blast using the selected F and R primers for off-target amplification in rat genome (with an amplicon size in the same range). If there is an off-target make sure that the amplicon length is too long for 15sec dPCR extension. This primer and probe set has no off-target amplicons.
 
 ```
    Primer pair 1
