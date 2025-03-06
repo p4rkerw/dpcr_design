@@ -1,4 +1,4 @@
-Our target region is rn7 Nd1 gene chrM:2,740-3,694 
+Our target region is rn7 Nd1 gene chrM:2,740-3,694. This region is reflective of total mitochondrial copy number because it is not affected by the common deletion.
 
 1. Examine the region using the UCSC Genome Browser. Note that RAGE24 data is based on **rn7**. Avoid SNVs as they can affect probe binding. Repetitive elements in the RepeatMasker track should also be avoided to prevent probes from binding to multiple genome regions. 
    
