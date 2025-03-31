@@ -96,14 +96,21 @@ Relax the primer length requirement if no ideal primers are found
 Below is the top primer / probe combination for our target region
 
 ```
-mm10_chrY_Sry_F: TGCTGCCTGCCGTAGTAGACT
-mm10_chrY_Sry_R: TGAGTTCTTTTGCCCTGTAACG
-chrY_Sry_P: CTTATCATTTTTAACCCTTTCC
+mm10_chrY_Sry_Pr_F: TGCTGCCTGCCGTAGTAGACT
+mm10_chrY_Sry_Pr_R: TGAGTTCTTTTGCCCTGTAACG
+mm10_chrY_Sry_Pr_P: CTTATCATTTTTAACCCTTTCC
 ```
 
 Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html
 
 ```
+Name                	Sequence              	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+mmm10_chrY_Uty_Pr_F:	cgtgggataaaacggttgct  	66.1	50.0	20	5.0	5.0	3.0	7.0	196100.0                         	6197.1                 	5.1 	31.6
+mm10_chrY_Uty_Pr_R: 	agtgtgaaccgcacgtaacg  	66.4	55.0	20	6.0	3.0	5.0	6.0	199800.0                         	6151.1                 	5.0 	30.8
+mm10_chrY_Uty_Pr_P: 	ccattggaaagcctg       	56.3	53.3	15	4.0	3.0	4.0	4.0	143000.0                         	4577.0                 	7.0 	32.0
+mm10_chrY_Sry_Pr_F: 	tgctgcctgccgtagtagact 	66.5	57.1	21	3.0	6.0	6.0	6.0	191400.0                         	6413.2                 	5.2 	33.5
+mm10_chrY_Sry_Pr_R: 	tgagttcttttgccctgtaacg	65.4	45.5	22	3.0	9.0	5.0	5.0	199000.0                         	6707.4                 	5.0 	33.7
+mm10_chrY_Sry_Pr_P: 	cttatcatttttaaccctttcc	57.8	31.8	22	4.0	11.0	7.0	0.0	192100.0                         	6561.3                 	5.2 	34.2
 
 ```
 
