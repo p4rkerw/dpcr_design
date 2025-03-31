@@ -102,25 +102,45 @@ mm10_chrY_Uty_Pr_P: CCATTGGAAAGCCTG
 Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html . Self-dimers are less problematic if not predicted by Primer Express. 
 
 ```
-
+Name                	Sequence              	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+mmm10_chrY_Uty_Pr_F:	cgtgggataaaacggttgct  	66.1	50.0	20	5.0	5.0	3.0	7.0	196100.0                         	6197.1                 	5.1 	31.6
+mm10_chrY_Uty_Pr_R: 	agtgtgaaccgcacgtaacg  	66.4	55.0	20	6.0	3.0	5.0	6.0	199800.0                         	6151.1                 	5.0 	30.8
+mm10_chrY_Uty_Pr_P: 	ccattggaaagcctg       	56.3	53.3	15	4.0	3.0	4.0	4.0	143000.0                         	4577.0                 	7.0 	32.0
+mm10_chrY_Sry_Pr_F: 	tgctgcctgccgtagtagact 	66.5	57.1	21	3.0	6.0	6.0	6.0	191400.0                         	6413.2                 	5.2 	33.5
+mm10_chrY_Sry_Pr_R: 	tgagttcttttgccctgtaacg	65.4	45.5	22	3.0	9.0	5.0	5.0	199000.0                         	6707.4                 	5.0 	33.7
+mm10_chrY_Sry_Pr_P: 	cttatcatttttaaccctttcc	57.8	31.8	22	4.0	11.0	7.0	0.0	192100.0                         	6561.3                 	5.2 	34.2
 
 ```
 
 Check NCBI primer blast using target BLAT sequence and selected F and R primers for off-target amplification in mouse genome (with an amplicon size in the same range)
 ```
+Primer pair 1
+Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CGTGGGATAAAACGGTTGCT	Plus	20	766	785	58.84	50.00	5.00	2.00
+Reverse primer	AGTGTGAACCGCACGTAACG	Minus	20	842	823	61.21	55.00	5.00	5.00
+Product length	77
+Products on potentially unintended templates
 >NC_000087.8 Mus musculus strain C57BL/6J chromosome Y, GRCm39
 
-product length = 101
-Features associated with this product:
-   histone demethylase uty isoform x9
+product length = 77
+Features flanking this product:
+   155 bp at 5' side: histone demethylase uty isoform x16
+   17505 bp at 3' side: atp-dependent rna helicase ddx3y isoform x3
 
-   histone demethylase uty isoform x6
+Forward primer  1        CGTGGGATAAAACGGTTGCT  20
+Template        1245782  ....................  1245763
 
-Forward primer  1        GGACAATCCAAAATCCACGAA  21
-Template        1154592  .....................  1154612
+Reverse primer  1        AGTGTGAACCGCACGTAACG  20
+Template        1245706  ....................  1245725
+```
 
-Reverse primer  1        GGTCCGCAGCAAGTTTCTGT  20
-Template        1154692  ....................  1154673
+Check UCSC in-silico pcr for mouse genome using F and R primers
+```
+	
+>chrY:1245706-1245782 77bp CGTGGGATAAAACGGTTGCT AGTGTGAACCGCACGTAACG
+CGTGGGATAAAACGGTTGCTtccattggaaagcctggctttagggagagg
+ttatggaCGTTACGTGCGGTTCACACT
+
 ```
 
 
