@@ -239,10 +239,10 @@ Template        69283880  ...A........TAA......  69283900
 
 Check UCSC in-silico PCR using the selected F and R primers for matches with the mm10 genome assembly
 ```
->chrY:2664174-2664317 144bp TGCTGCCTGCCGTAGTAGACT TGAGTTCTTTTGCCCTGTAACG
-TGCTGCCTGCCGTAGTAGACTatgatactaatgataggttccatgcttat
-catttttaaccctttccactacttttgcaagctcgttaatttctcacgtt
-agtccatcctaaacattaggtaCGTTACAGGGCAAAAGAACTCA
+	
+>chrY:2663315-2663389 75bp GCCTGCAGTTGCCTCAACA TGCCTGTATGTGATGGCATGT
+GCCTGCAGTTGCCTCAACAaaactgtacaaccttctgcagtgggacagga
+acccACATGCCATCACATACAGGCA
 
 ```
 
