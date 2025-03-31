@@ -99,9 +99,9 @@ Relax the primer length requirement if no ideal primers are found
 Below is the top primer / probe combination for our target region
 
 ```
-mm10_chrY_Sry_Pr_Ex1: GCCTGCAGTTGCCTCAACA
-mm10_chrY_Sry_Pr_Ex1: TGCCTGTATGTGATGGCATGT
-mm10_chrY_Sry_Pr_Ex1: AACTGTACAACCTTCTGC
+mm10_chrY_Sry_Ex1: GCCTGCAGTTGCCTCAACA
+mm10_chrY_Sry_Ex1: TGCCTGTATGTGATGGCATGT
+mm10_chrY_Sry_Ex1: AACTGTACAACCTTCTGC
 ```
 
 Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html
@@ -111,9 +111,9 @@ Name                 	Sequence              	Tm°C	CG%	nt	A	T	C	G	Extinction coe
 mmm10_chrY_Uty_Pr_F: 	cgtgggataaaacggttgct  	66.1	50.0	20	5.0	5.0	3.0	7.0	196100.0                         	6197.1                 	5.1 	31.6
 mm10_chrY_Uty_Pr_R:  	agtgtgaaccgcacgtaacg  	66.4	55.0	20	6.0	3.0	5.0	6.0	199800.0                         	6151.1                 	5.0 	30.8
 mm10_chrY_Uty_Pr_P:  	ccattggaaagcctg       	56.3	53.3	15	4.0	3.0	4.0	4.0	143000.0                         	4577.0                 	7.0 	32.0
-mm10_chrY_Sry_Pr_Ex1:	gcctgcagttgcctcaaca   	68.1	57.9	19	4.0	4.0	7.0	4.0	173300.0                         	5748.8                 	5.8 	33.2
-mm10_chrY_Sry_Pr_Ex1:	tgcctgtatgtgatggcatgt 	66.7	47.6	21	3.0	8.0	3.0	7.0	197700.0                         	6483.3                 	5.1 	32.8
-mm10_chrY_Sry_Pr_Ex1:	aactgtacaaccttctgc    	53.0	44.4	18	5.0	5.0	6.0	2.0	166700.0                         	5418.6                 	6.0 	32.5
+mm10_chrY_Sry_Ex1:	gcctgcagttgcctcaaca   	68.1	57.9	19	4.0	4.0	7.0	4.0	173300.0                         	5748.8                 	5.8 	33.2
+mm10_chrY_Sry_Ex1:	tgcctgtatgtgatggcatgt 	66.7	47.6	21	3.0	8.0	3.0	7.0	197700.0                         	6483.3                 	5.1 	32.8
+mm10_chrY_Sry_Ex1:	aactgtacaaccttctgc    	53.0	44.4	18	5.0	5.0	6.0	2.0	166700.0                         	5418.6                 	6.0 	32.5
 mm10_chrY_Eya1_Pr_F: 	tcccccacagctgtttattca 	66.7	47.6	21	4.0	7.0	8.0	2.0	188400.0                         	6292.1                 	5.3 	33.4
 mm10_chrY_Eya1_Pr_R: 	ctgactcaacctcgctgcttta	65.9	50.0	22	4.0	7.0	8.0	3.0	194000.0                         	6621.4                 	5.2 	34.1
 mm10_chrY_Eya1_Pr_P: 	cgcgtcatttacataat     	52.3	35.3	17	5.0	6.0	4.0	2.0	163900.0                         	5144.4                 	6.1 	31.4
@@ -125,32 +125,116 @@ mm10_chrX_Ftx_Pr_P:  	tctggttccaggtattaga   	55.2	42.1	19	4.0	7.0	3.0	5.0	185900
 
 Check NCBI primer blast using target BLAT sequence and selected F and R primers for off-target amplification in mouse genome (with an amplicon size in the same range). The first template below is the intended template. 
 ```
+
+Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	GCCTGCAGTTGCCTCAACA	Plus	19	270	288	61.20	57.89	6.00	3.00
+Reverse primer	TGCCTGTATGTGATGGCATGT	Minus	21	344	324	60.06	47.62	5.00	2.00
+Product length	75
 Products on potentially unintended templates
 >NC_000087.8 Mus musculus strain C57BL/6J chromosome Y, GRCm39
 
-product length = 144
+product length = 75
+Features associated with this product:
+   sex-determining region y protein
+
+Forward primer  1        GCCTGCAGTTGCCTCAACA  19
+Template        2663389  ...................  2663371
+
+Reverse primer  1        TGCCTGTATGTGATGGCATGT  21
+Template        2663315  .....................  2663335
+
+>NC_000076.7 Mus musculus strain C57BL/6J chromosome 10, GRCm39
+
+product length = 3507
+Features associated with this product:
+   phosphatidylinositol phosphatase ptprq isoform 2 precursor
+
+   phosphatidylinositol phosphatase ptprq isoform 1 precursor
+
+Forward primer  1          GCCTGCAGTTGCCTCAACA  19
+Template        107378505  ...A.......T.A.....  107378487
+
+Reverse primer  1          TGCCTGTATGTGATGGCATGT  21
+Template        107374999  .......G....TGT......  107375019
+
+
+product length = 2419
 Features flanking this product:
-   517 bp at 5' side: sex-determining region y protein
-   56021 bp at 3' side: histone variant h2al2-like
+   163709 bp at 5' side: armadillo repeat-containing protein 2 isoform x2
+   59191 bp at 3' side: forkhead box protein o3
 
-Forward primer  1        TGCTGCCTGCCGTAGTAGACT  21
-Template        2664317  .....................  2664297
+Forward primer  1         GCCTGCAGTTGCCTCAACA  19
+Template        42010887  T.AG............C..  42010905
 
-Reverse primer  1        TGAGTTCTTTTGCCCTGTAACG  22
-Template        2664174  ......................  2664195
+Reverse primer  1         TGCCTGTATGTGATGGCATGT  21
+Template        42013305  .C....AC.........T...  42013285
 
->NC_000072.7 Mus musculus strain C57BL/6J chromosome 6, GRCm39
+>NC_000070.7 Mus musculus strain C57BL/6J chromosome 4, GRCm39
 
-product length = 1538
+product length = 664
+Features associated with this product:
+   cilia- and flagella-associated protein 107 isoform x1
+
+   cilia- and flagella-associated protein 107
+
+Forward primer  1          GCCTGCAGTTGCCTCAACA  19
+Template        144159701  A.....CT...........  144159719
+
+Reverse primer  1          TGCCTGTATGTGATGGCATGT  21
+Template        144160364  CA.T......GC.........  144160344
+
+>NC_000085.7 Mus musculus strain C57BL/6J chromosome 19, GRCm39
+
+product length = 869
 Features flanking this product:
-   649603 bp at 5' side: regenerating islet-derived protein 3-gamma preproprotein
-   698549 bp at 3' side: mtrnr2-like
+   235046 bp at 5' side: uncharacterized protein loc329047
+   93270 bp at 3' side: very low-density lipoprotein receptor isoform x1
 
-Reverse primer  1         TGAGTTCTTTTGCCCTGTAACG  22
-Template        79096684  CA.......C.T.........A  79096663
+Forward primer  1         GCCTGCAGTTGCCTCAACA  19
+Template        27101744  T.........T..A....C  27101726
 
-Reverse primer  1         TGAGTTCTTTTGCCCTGTAACG  22
-Template        79095147  .A.T..A.C............T  79095168
+Reverse primer  1         TGCCTGTATGTGATGGCATGT  21
+Template        27100876  AT...........G.....C.  27100896
+
+>NC_000082.7 Mus musculus strain C57BL/6J chromosome 16, GRCm39
+
+product length = 1081
+Features associated with this product:
+   probable cation-transporting atpase 13a4 isoform x3
+
+   probable cation-transporting atpase 13a4 isoform x9
+
+Forward primer  1         GCCTGCAGTTGCCTCAACA  19
+Template        29241477  .G..T..T...........  29241495
+
+Forward primer  1         GCCTGCAGTTGCCTCAACA  19
+Template        29242557  ATG.T.............C  29242539
+
+>NC_000083.7 Mus musculus strain C57BL/6J chromosome 17, GRCm39
+
+product length = 646
+Features associated with this product:
+   uromodulin-like 1 precursor
+
+   uromodulin-like 1 isoform x1
+
+Reverse primer  1         TGCCTGTATGTGATGGCATGT  21
+Template        31214825  ...A........TGT......  31214805
+
+Reverse primer  1         TGCCTGTATGTGATGGCATGT  21
+Template        31214180  ...A........TGT......  31214200
+
+
+product length = 2747
+Features flanking this product:
+   134549 bp at 5' side: transmembrane protein 200c
+   228238 bp at 3' side: band 4.1-like protein 3 isoform x8
+
+Reverse primer  1         TGCCTGTATGTGATGGCATGT  21
+Template        69286626  ..T....G.......TG....  69286606
+
+Reverse primer  1         TGCCTGTATGTGATGGCATGT  21
+Template        69283880  ...A........TAA......  69283900
 ```
 
 Check UCSC in-silico PCR using the selected F and R primers for matches with the mm10 genome assembly
