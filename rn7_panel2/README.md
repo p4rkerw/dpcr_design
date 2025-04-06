@@ -18,8 +18,8 @@ chrYP	agatttatgtgcctcagggt    	60.5	45.0	20	4.0	7.0	3.0	6.0	194200.0            
 panel 2 build:
 
 
-- chr1 - ABY
-- chrX - VIC
+- chr1 - VIC
+- chrX - ABY
 - chr10 - FAM
 - chr12 - Cy5
 ```
