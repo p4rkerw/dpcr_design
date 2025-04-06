@@ -1,5 +1,10 @@
 The primer probe design are based on GRCr8. 
 
+Date: Nov/21/2024
+
+Notes:
+- validation in qPCR suggested that we should only use Dclk1 long+short spliced and unspliced primers (Dclk1 L+S all) and Dclk1 long spliced 
+  and unspliced primers (Dclk1 L all).
 ## Information
 - The Refseq record of this gene is at [link](https://www.ncbi.nlm.nih.gov/gene/83825). Current Refseq only has two curated isoforms for rats, corresponding to human short isoform (NM_001195416.2) and human shortest isoform (less documented NM_001195430.2), respectively.
   - The homology can be confirmed by Blastp on corresponding protein sequences (blasting mRNA is also fine, but the sequences are less similar). 
@@ -335,7 +340,7 @@ Reverse primer  1     CGGCACATCCATCTCTTCAA  20
 Template        4916  GTA..........C...A..  4935
 ```
 ## 2. For long + short spliced only
-For spliced transcripts, it is better to use Primer Blast. We focus on exon 2 and 3 of the long isoform NM_053343.3. In Primer Blast:
+For spliced transcripts, it is better to use Primer Blast. We focus on exon 2 and 3 of the short isoform NM_053343.3. In Primer Blast:
 - Use NM_053343.3 as PCR template. Reverse primer to 260 bp.
 - PCR product size from 80-85. Return 20 primers
 - Melting temperatures 58 to 62. Tm max = 1.
