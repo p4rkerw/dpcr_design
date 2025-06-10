@@ -666,8 +666,8 @@ TCAAGATTGTCAGC
    
 ```
 Name              	Sequence                 	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
-rn7-basket-Gapdh-F	tgcccccatgtttgtgatg      	68.3	52.6	19	2.0	7.0	5.0	5.0	170600.0                         	5785.8                 	5.9 	33.9
-rn7-basket-Gapdh-R	gctgacaatcttgagggagttgt  	65.9	47.8	23	5.0	7.0	3.0	8.0	224300.0                         	7134.7                 	4.5 	31.8
+rn7-chrB-Gapdh-F  	tgcccccatgtttgtgatg      	68.3	52.6	19	2.0	7.0	5.0	5.0	170600.0                         	5785.8                 	5.9 	33.9
+rn7-chrB-Gapdh-R  	gctgacaatcttgagggagttgt  	65.9	47.8	23	5.0	7.0	3.0	8.0	224300.0                         	7134.7                 	4.5 	31.8
 rn7-basket-Gapdh-P	tgtgaaccacgagaaat        	55.2	41.2	17	7.0	3.0	3.0	4.0	175100.0                         	5227.5                 	5.7 	29.9
 rn7-chr1-Rpp30-F  	tcatggacctggctttcttgt    	66.1	47.6	21	2.0	9.0	5.0	5.0	185000.0                         	6394.2                 	5.4 	34.6
 rn7-chr1-Rpp30-R  	tcgtgccaatcgcctactc      	66.7	57.9	19	3.0	5.0	8.0	3.0	167100.0                         	5699.7                 	6.0 	34.1
@@ -682,7 +682,7 @@ rn7-chrM-Nd4-P    	cctcactcttattctgc        	50.6	47.1	17	2.0	7.0	7.0	1.0	142600
 ```
 
 ```
-               Self-Dimers:
+                Self-Dimers:
 
 1 dimer for: rn7-chrM-Nd4-F
 5-tcgcccacggcttaacc->
@@ -692,8 +692,8 @@ rn7-chrM-Nd4-P    	cctcactcttattctgc        	50.6	47.1	17	2.0	7.0	7.0	1.0	142600
 
                Cross Primer Dimers:
 
-rn7-basket-Gapdh-F with rn7-basket-Gapdh-R
-rn7-basket-Gapdh-F
+rn7-chrB-Gapdh-F with rn7-chrB-Gapdh-R
+rn7-chrB-Gapdh-F
 5-gctgacaatcttgagggagttgt->
     | |||| | || |||  
 <-gtagtgtttgtacccccgt-5
