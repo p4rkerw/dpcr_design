@@ -471,10 +471,6 @@ F: TGCCCCCATGTTTGTGATG
 R: GCTGACAATCTTGAGGGAGTTGT
 P: TGTGAACCACGAGAAAT
 
-
-
-
-
 8. We will check the F and R primers using the ucsc in silico pcr tool
 Note how there are 24 genomic regions that have a match for the taqman probe sequence TGTGAACCACGAGAAAT
 
@@ -666,3 +662,23 @@ TCAAGATTGTCAGC
 ```
 
 
+9. Check that the amplicon length is between 50-150 and that the melting temperatures are comparable to other primers in the multiplex design. Also check for self-dimers and cross primer dimers with other primers in the multiplex reaction using the Multiple Primer Analyzer: [link](https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html) . Self-dimers are less problematic if not predicted by Primer Express. 
+   
+```
+Name            	Sequence                 	Tm°C	CG%	nt	A	T	C	G	Extinction coefficient(l/(mol·cm)	Molecular weight(g/mol)	nmol	µg/OD260
+rn7-chr1-Rpp30-F	tcatggacctggctttcttgt    	66.1	47.6	21	2.0	9.0	5.0	5.0	185000.0                         	6394.2                 	5.4 	34.6
+rn7-chr1-Rpp30-R	tcgtgccaatcgcctactc      	66.7	57.9	19	3.0	5.0	8.0	3.0	167100.0                         	5699.7                 	6.0 	34.1
+rn7-chr1-Rpp30-P	ccaaagacacagattaa        	49.0	35.3	17	9.0	2.0	4.0	2.0	180400.0                         	5180.5                 	5.5 	28.7
+rn7-chrM-Nd1-F  	aacggaaaatcctaggctacataca	64.7	40.0	25	11.0	4.0	6.0	4.0	257800.0                         	7652.1                 	3.9 	29.7
+rn7-chrM-Nd1-R  	catatgggcctacgatgttg     	63.1	50.0	20	4.0	6.0	4.0	6.0	191700.0                         	6148.1                 	5.2 	32.1
+rn7-chrM-Nd1-P  	ctacgcaaaggcc            	51.4	61.5	13	4.0	1.0	5.0	3.0	123200.0                         	3928.6                 	8.1 	31.9
+rn7-chrM-Nd2-F  	ccaccattctcgcaatttca     	66.2	45.0	20	5.0	6.0	8.0	1.0	180900.0                         	5971.9                 	5.5 	33.0
+rn7-chrM-Nd2-R  	tcgtgtttgggtctggttaagtc  	66.3	47.8	23	2.0	10.0	3.0	8.0	213900.0                         	7107.7                 	4.7 	33.2
+rn7-chrM-Nd2-P  	cagtctttgttggcgcct       	64.5	55.6	18	1.0	7.0	5.0	5.0	155900.0                         	5472.6                 	6.4 	35.1
+rn7-chrM-Nd4-F  	tcgcccacggcttaacc        	67.6	64.7	17	3.0	3.0	8.0	3.0	149300.0                         	5091.3                 	6.7 	34.1
+rn7-chrM-Nd4-R  	tcgttcgtagttggtgtttgct   	65.9	45.5	22	1.0	11.0	3.0	7.0	199000.0                         	6769.5                 	5.0 	34.0
+rn7-chrM-Nd4-P  	cctcactcttattctgc        	50.6	47.1	17	2.0	7.0	7.0	1.0	142600.0                         	5047.3                 	7.0 	35.4
+
+
+
+```
