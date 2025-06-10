@@ -1,4 +1,4 @@
-dpcr primer and probe design for non-unique Gapdh sequence on chr4. This is a single copy reference gene.
+dpcr primer and probe design for non-unique region in Gapdh on chr4. This primer / probe set is designated "chrB" for chromosome basket - because it is not a single copy reference region.
 
 1. First navigate to Gapdh https://genome.ucsc.edu/cgi-bin/hgTracks?db=rn7&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr4%3A157962358%2D157966230&hgsid=2661133848_7b3Ya9s0aHPcvM214jAMEBJaqxHU
 
