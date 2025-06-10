@@ -473,7 +473,7 @@ F: CATGGCCTCCAAGGAGTAAGAA
 R: CTCTCTTGCTCTCAGTATCCTTGCT
 P: CCTGGACCACCCAGC
 
-8. We will check the F and R primers using the ucsc in silico pcr tool
+8. We will check the F and R primers using the ucsc in silico pcr tool. Note how there are multiple pcr products of varying sizes.
 Of all the amplified regions, note how there are 17 genomic regions that have an exact match for the taqman probe sequence CCTGGACCACCCAGC.
 These regions are on chromosomes: 12, 14, 20, 2, 5(x3), 8(x2), 11, 13, 18, 20, 3(x2), 4(x2)
 Many of the other regions have a 1bp mismatch for the taqman probe 
