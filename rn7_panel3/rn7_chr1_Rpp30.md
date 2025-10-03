@@ -43,6 +43,17 @@ browser details YourSeq    20   512   531   735   100.0%  chr10  +    50546103  
 - Reverse Primer:GCTTTCTTGCACGCTGGAA 
 - Probe: AAGCAGAGGATGAATCT 
 
+identify the amplicon using the ucsc in silico pcr tool for rn7 rat genome
+```
+GAAGAAGCCCCGGTCATCAgaagcagaggatgaatctcTTCCAGCGTGCAAGAAAGC
+```
+
+check neb NEBCutter tool to find restriction enzyme sites in this amplicon sequence
+https://nc2.neb.com/NEBcutter2/?noredir
+
+document enzymes with sites in the amplicon and exclude as potential digestion enzymes.
+
+
 We will now double check this primer set for specificity using primer blast and our target sequence. We will also select "Genomes for selected eukaryotic organisms" and Rattus norvegicus to check if the primer set will amplify any regions elsewhere in the genome. The only template with a perfect match is our target sequence.
 
 ```
