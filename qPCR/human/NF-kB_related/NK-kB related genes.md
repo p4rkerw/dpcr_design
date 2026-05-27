@@ -8,10 +8,10 @@ One paper on neuroblastoma cell line with cisplatin: [link](https://www.hamidiye
 
 Selected genes:
 - Receptors: TNFRSF1A, IL1R1, TNFRSF12A
-- Cytokines: TNF(TNF-a), IL1B, IL6, IL10
+- Cytokines/chemokines: TNF(TNF-a), IL1B, IL6, IL10, CCL2
 - Transcription factors: MKI67, ATF3, JUN, JUND, FOSL2
 - Structural genes: NFKB1, NFKB2
-- Inhibitors: IKK1, CDKN1A
+- Inhibitors: IKK1 (activator), CDKN1A, NFKBIA, TNFAIP3
 - Apoptosis: TP53 
 - Tropomyosin: TPM4
 - Phosphatase: DUSP1
@@ -71,6 +71,20 @@ Generally all primers from papers are validated using Primer Blast. When I desig
   - Reverse: 5'-GGGCATCACCTCCTCCAGGTAA-3'
   - Primer Blast result: <img src="image-12.png" alt="Primer Blast result" width="700"/>
   - Product length: 96 bp
+- CCL2:
+  - From this [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10641171/).
+  - Forward: 5'-AGCAGCCACCTTCATTCC-3'
+  - Reverse: 5'-GCCTCTGCACTGAGATCTTC-3'
+  - Primer Blast result: Might have some unspecific band at 400 bp with mismatches.
+  - Product length: 104 bp
+- CXCL8/IL8: 
+  - Try to put the primers on the CDS of NM_000584.4.
+  - Forward: 5'-ACTCCAAACCTTTCCACCCC-3'
+  - Reverse: 5'-CCTCTGCACCCAGTTTTCCT-3'
+  - Product length: 143 bp
+  - Primer Blast result:
+    - Amplifies both NM_000584.4 and NM_001354840.3 of CXCL8, and potential product of ZNG1F with several mismatches and 3113bp product.
+
 
 ## Transcription factors:
 - MKI67
@@ -303,8 +317,6 @@ Generally all primers from papers are validated using Primer Blast. When I desig
   - Reverse:5'-	TTTGACCTGAGGGTAAGACTTCT-3'
   - Primer Blast result: <img src="image-9.png" alt="Primer Blast result" width="700"/>
   - Product length: 104 bp
-
-## Structural genes: NFKB2
 - NFKB2
   - Forward: 5'-CTTTGGGGACTTCTCTCCCAC-3'
   - Reverse: 5'-CCTCTTCCTTGTCTTCCACCAG-3'
@@ -368,7 +380,7 @@ Generally all primers from papers are validated using Primer Blast. When I desig
     ```
   - Product length: 188 bp
 
-## Activators: 
+## Inhibitor/Activators: 
 IKK1 (CHUK) protein phosphorylates IkBa protein, and then IkBa is degraded by proteasome, releasing NF-kB to the nucleus. Thus IKK1 is an indirect activator of NF-kB.
 - IKK1
   - From this [paper](https://www.sciencedirect.com/science/article/pii/S0167488918300600#s0035) 
@@ -488,6 +500,21 @@ IKK1 (CHUK) protein phosphorylates IkBa protein, and then IkBa is degraded by pr
     Reverse primer  1     CTAGGCTGTGCTCACTTCAG  20
     Template        1418  ....................  1399
     ```
+- NFKBIA
+  - NFKBIA encodes IkBa protein, which is an inhibitor that binds to NF-kB and inhibiting the translocation of NFkB to nucleus.
+  - From this [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10641171/#sec3)
+  - Forward: 5'-CTCCGAGACTTTCGAGGAAATAC-3'
+  - Reverse: 5'-GCCATTGTAGTTGGTAGCCTTCA-3'
+  - Product length: 135 bp
+
+- TNFAIP3 (A20)
+  - TNFAIP3 encodes A20, which is rapidly induced by TNF. It can inhibit NF-kB activation as a negative feedback.
+  - Try to place the primers on the CDS of NM_001270508.2, so the primer is common to most transcripts of TNFAIP3.
+  - Forward: 5'-CAGAACACCATTCCGTGCCT-3'
+  - Reverse: 5'-GGCTCGATCTCAGTTGCTCT-3'
+  - Product length: 145 bp
+  - Primer Blast result: amplifies all NM transcripts to date (05/2026)
+
 ## Apoptosis: TP53
 - TP53
   - From this paper on p53 effects [link](https://pmc.ncbi.nlm.nih.gov/articles/PMC10735018/)
