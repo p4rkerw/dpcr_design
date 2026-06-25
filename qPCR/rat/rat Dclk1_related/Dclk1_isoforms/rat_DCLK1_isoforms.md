@@ -1,5 +1,5 @@
 # Introduciton
-This qPCR primer design is based on the rat Dclk1 gene and its isoforms detected in RAGE24 long read analysis. 
+This qPCR primer design is based on the rat Dclk1 gene and its isoforms detected in RAGE24 long read analysis. Due to legacy problems, the DCL primers has been called DCLK1-L-all because we thought this part was only present in L740aa isoform (speaking of human L740) and this pair was put on a SINGLE exon in DCL region. The KD primers was called DCLK1-L+S-all for similar reasons and this pair was put on a SINGLE exon in the KD region.
 
 # Design Principles
 When I design the primers, I usually use Primer Blast, and follow the below principles (the parameters can be more stringent if needed):
@@ -54,8 +54,8 @@ Design:
 - DCL_Nov_R: 5'-ACCAACAAAACGTGTGCTTCA-3'
 - Product size: 113 bp
 
-## Kinase Domain only
-Exon 1 is unique to kinase domain isoforms (DCLK-S isoforms). We restrict the forward primer to exon 1 in NM_053343.3 (1-165bp). 
+## Kinase Domain only (short DCLK1-S 433aa isoform only)
+Exon 1 is unique to kinase domain isoforms (DCLK1-S isoforms). We restrict the forward primer to exon 1 in NM_053343.3 (1-165bp). 
 1. Choose NM_053343.3 as the template in Primer Blast, and forward primer to end before 165 bp.
 2. In the first result, select the other kinase domain isoforms to be acceptable templates.
 
